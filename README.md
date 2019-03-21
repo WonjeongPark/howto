@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HowTo
 
-## Available Scripts
+## Personal Trainner와 Trainee를 이어주는 중개 플랫폼 입니다.
 
-In the project directory, you can run:
+### HowTo를 만드려는 계기
+`하루의 많은 시간을 책상에서 생활하는 사람들이 대부분 겪는 어깨나 허리통증` 등을 경험한 개인적인 입장에서<br>
+운동을 시작하는 것만큼 어려운 것이 `운동을 해나가는 것`이라 생각합니다.<br><br>
+><br>헬스장에 나가는 것 만큼 어려운 것은 헬스장에 있는 `기구 등을 올바른 방법으로 적정한 횟수`로 이용하는 것인데<br>
+>힘을 주는 부위, 호흡법, 팔다리의 각도, 개개인마다 약한 부위별로 조심해야하는 방법 등..<br>
+>막상 기구에 앉아도 궁금한 것 투성이가 됩니다.<br><br>
 
-### `npm start`
+이 상황에서 결론은 런닝머신만 하고 집에 가거나, PT를 알아보는 것으로 많이 나뉩니다.<br><br>
+`PT를 받아야 겠다고 결심`해도 망설이게 되는 건<br>
+`누군가와 나의 몸 건강상태(근육량, 체지방량등)를 공유해야하는 것, 부담스러운 가격, 트레이너의 영업 등`의 이유입니다.<br><br>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+><br>그래서 **온라인으로 미리 PT의 진행 방식, 트레이너 프로필 등을 볼 수 있는 중개플랫폼**을 만들고 싶습니다.<br>
+>조금이라도 쉽게 접근할 수 있게 만들어서 많은 사람들이 올바른 방법을 배워 운동을 하고 건강을 유지하길 바랍니다.<br><br>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+![HowToImg](https://github.com/WonjeongPark/howto/blob/8e11d129095cfcc51f9e22b2f84a3546439e4b0e/HowToImg.png?raw=true)
 
-### `npm test`
+## 예상구조
+### Main
+`수강생`-본인이 지정한 위치 근처 헬스장 트레이너 목록이 뜨고, 속성별 검색 + 쪽지함<br>
+`트레이터`- 현 수강생 프로필 + 본인이 지정한 위치에 등록된 수강생 목록+ 간단한 소개 프로필 쪽지보내기.<br>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Profile
+`수강생`- 이름,성별, 목표, 고민부위, 선호운동스타일, 원하는 기간 등 기재. 트레이너 평가 란.
+`트레이너`- 이름, 성별, 운동스타일, 경력, 소개영상, 사진 등 기재. 수강생 평가 란.
+          -짧은 운동소개 동영상 업로드, 강조스티커 편집 툴.
 
-### `npm run build`
+### Post
+`수강생`- 양도거래
+`트레이너`- 1회 체험 등 이벤트행사
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 그 외 고려할 사항
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+생각나는 것들 계속 추가하기!
