@@ -1,0 +1,12 @@
+.trainerprofile{
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.trainerprofile-right {
+    width : 180px;
+}
+
+.trainerprofile-right img {
+    height : 120px;
+}

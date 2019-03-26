@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react'
 import './App.css';
-import TrainerProfiles from '../TrainerProfiles.jsx'
+import ProfileDashboard from '../main/ProfileDashboard'
+import NavBar from '../nav/NavBar/NavBar'
+
+
 
 class App extends Component {
   render() {
     return (
       <div>
-        <TrainerProfiles />
+        <NavBar/>
+        <Container className="main">
+          <ProfileDashboard/>
+        </Container>
       </div>
+      
     );
   }
 }
