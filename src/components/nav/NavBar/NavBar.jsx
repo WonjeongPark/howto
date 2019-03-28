@@ -7,7 +7,7 @@ class NavBar extends Component {
             <Menu inverted fixed="top">
               <Container>
                 <Menu.Item header>
-                  <img src="assets/logo.png" alt="logo" />
+                  <img src="../../public/logo.jpg" alt="logo" />
                   Howto
                 </Menu.Item>
                 <Menu.Item name="Board" />

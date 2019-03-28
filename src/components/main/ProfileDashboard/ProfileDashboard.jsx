@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
-import TrainerProfiles from './TrainerProfiles'
-import TrainerVideos from './TrainerVideos'
+import TrainerProfiles from '../TrainerProfileList/TrainerProfiles'
+import TrainerVideos from '../TrainerVideos'
 
 class ProfileDashboard extends Component {
   render() {

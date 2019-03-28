@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react'
 import './TrainerProfile.css';
+import {  } from '../../TrainerProfileFrom/TrainerProfileForm'
 
 class TrainerProfile extends Component {
     render() {
