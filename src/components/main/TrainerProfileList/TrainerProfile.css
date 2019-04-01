@@ -3,10 +3,6 @@
     margin-bottom: 10px;
 }
 
-.trainerprofile-right {
-    width : 180px;
-}
-
-.trainerprofile-right img {
-    height : 120px;
+.trainerprofile-left, .trainerprofile-left img  {
+    width : 150px;
 }

@@ -5,29 +5,39 @@ import React, { Component } from 'react'
 class TrainerProfileForm extends Component {
   state = {
     name: '',
-    phone: ''
+    gym: ''
   }
-  handleChange = (e) => {
+  ProfileChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
+
+  profileSubmit = (e) => {
+    e.preventDefault();
+    this.props.onCreate(this.state);
+    this.setState({
+      name: '',
+      gym: ''
+    })
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.profileSubmit}>
         <input
           placeholder="이름"
           value={this.state.name}
-          onChange={this.handleChange}
+          onChange={this.ProfileChange}
           name="name"
         />
         <input
-          placeholder="전화번호"
-          value={this.state.phone}
-          onChange={this.handleChange}
-          name="phone"
+          placeholder="헬스장이름"
+          value={this.state.gym}
+          onChange={this.ProfileChange}
+          name="gym"
         />
-        <div>{this.state.name} {this.state.phone}</div>
+        <button type="submit">등록</button>
       </form>
     );
   }
