@@ -7,6 +7,7 @@ class TrainerProfile extends Component {
         info: {
           name: '이름',
           gym: '헬스장이름',
+          gender:'',
           id: 0
         }
       }
@@ -24,21 +25,21 @@ class TrainerProfile extends Component {
           };
 
         const {
-            name, gym, id
+            name, gym, gender, id
           } = this.props.info;
         
         return (
             <Grid className="trainerprofile" style={style}>
                 <Grid.Column className="trainerprofile-left" width={5}>
-                    <img alt="profilePhoto" src="https://avatars2.githubusercontent.com/u/41983574?s=460&v=4"/>
+                    <img alt="profilePhoto" src="https://randomuser.me/api/portraits/women/42.jpg"/>
                     <div className="trainer-name">{name}</div>
                     <div className="trainer-gym">{gym}</div>
                 </Grid.Column>
                 <Grid.Column className="trainerprofile-right" width={7}>
-                    <div>성별 :</div>
-                    <div>경력 :</div>
-                    <div>가능시간 : (표로보이게?)</div>
-                    <div>소개영상 (클릭하면 왼쪽에뜨게)</div>
+                    <div>성별 : {gender}</div>
+                    <div>경력 :  </div>
+                    <div>가능시간 보기(캘린더? 효율적인것 생각)</div>
+                    <div>운동영상 모두보기</div>
                     <div>수강생평가(팝업창 ?)</div>
                     <button onClick={this.profileRemove}>삭제</button>
                 </Grid.Column>

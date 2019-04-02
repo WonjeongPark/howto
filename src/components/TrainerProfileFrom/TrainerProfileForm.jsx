@@ -5,7 +5,8 @@ import React, { Component } from 'react'
 class TrainerProfileForm extends Component {
   state = {
     name: '',
-    gym: ''
+    gym: '',
+    gender: ''
   }
   ProfileChange = (e) => {
     this.setState({
@@ -18,7 +19,8 @@ class TrainerProfileForm extends Component {
     this.props.onCreate(this.state);
     this.setState({
       name: '',
-      gym: ''
+      gym: '',
+      gender: ''
     })
   }
 
@@ -37,6 +39,11 @@ class TrainerProfileForm extends Component {
           onChange={this.ProfileChange}
           name="gym"
         />
+        <select name="gender" value={this.state.value} onChange={this.ProfileChange}>
+            <option value="여성">여성</option>
+            <option value="남성">남성</option>
+        </select>
+        
         <button type="submit">등록</button>
       </form>
     );

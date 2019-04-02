@@ -11,12 +11,14 @@ class ProfileDashboard extends Component {
       {
         id:0,
         name: '박원정',
-        gym: '스포애니문정점'
+        gym: '스포애니문정점',
+        gender: '여성'
       },
       {
         id:1,
         name: '정수',
-        gym: '스포애니대전시청점'
+        gym: '스포애니대전시청점',
+        gender: '남성'
       }
     ]
   }
