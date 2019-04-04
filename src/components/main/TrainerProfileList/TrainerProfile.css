@@ -6,3 +6,13 @@
 .trainerprofile-left, .trainerprofile-left img  {
     width : 150px;
 }
+
+.trainerprofile-right div, 
+.trainerprofile-right Button{
+    padding: 4px;
+    font-size: 13px;
+    font-weight: 700;
+}
+/* .trainerprofile-right .trainerTime{
+    
+} */

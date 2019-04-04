@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Button } from 'semantic-ui-react'
 import './TrainerProfile.css';
 
 class TrainerProfile extends Component {
@@ -8,6 +8,7 @@ class TrainerProfile extends Component {
           name: '이름',
           gym: '헬스장이름',
           gender:'',
+          career:'',
           id: 0
         }
       }
@@ -25,7 +26,7 @@ class TrainerProfile extends Component {
           };
 
         const {
-            name, gym, gender, id
+            name, gym, gender, career, id
           } = this.props.info;
         
         return (
@@ -35,12 +36,12 @@ class TrainerProfile extends Component {
                     <div className="trainer-name">{name}</div>
                     <div className="trainer-gym">{gym}</div>
                 </Grid.Column>
-                <Grid.Column className="trainerprofile-right" width={7}>
+                <Grid.Column className="trainerprofile-right" width={9}>
                     <div>성별 : {gender}</div>
-                    <div>경력 :  </div>
-                    <div>가능시간 보기(캘린더? 효율적인것 생각)</div>
-                    <div>운동영상 모두보기</div>
-                    <div>수강생평가(팝업창 ?)</div>
+                    <div>경력 :  {career}</div>
+                    <Button className="trainerTime" >가능시간 보기</Button>
+                    <div>운동영상 보기 -></div>
+                    <div>수강생평가(팝업창 ?){id}</div>
                     <button onClick={this.profileRemove}>삭제</button>
                 </Grid.Column>
             </Grid>
