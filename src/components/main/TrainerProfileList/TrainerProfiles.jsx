@@ -8,7 +8,7 @@ class TrainerProfiles extends Component {
       }
 
     render() {
-       const { data, onRemove } = this.props;
+    const { data, onRemove } = this.props;
     const list = data.map(
       info => (
       <TrainerProfile
