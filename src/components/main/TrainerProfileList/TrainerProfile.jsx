@@ -40,9 +40,9 @@ class TrainerProfile extends Component {
                     <div>성별 : {gender}</div>
                     <div>경력 :  {career}</div>
                     <Button className="trainerTime" >가능시간 보기</Button>
-                    <div>운동영상 보기 -></div>
+                    <div>오른쪽에서 운동영상 보기</div>
                     <div>수강생평가(팝업창 ?){id}</div>
-                    <button onClick={this.profileRemove}>삭제</button>
+                    <button onClick={this.profileRemove}>해당 트레이너 그만보기</button>
                 </Grid.Column>
             </Grid>
         )
