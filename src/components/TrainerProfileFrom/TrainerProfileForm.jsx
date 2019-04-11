@@ -7,12 +7,20 @@ class TrainerProfileForm extends Component {
     name: '',
     gym: '',
     gender: '',
-    career:''
+    career:'',
+    dates: []
   }
   ProfileChange = (e) => {
+    //console.log(e);
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+
+  DateChange = dates => {
+    //console.log(e);
+    this.setState({ dates: dates });
+    console.log(this.state);
   }
 
   profileSubmit = (e) => {
@@ -22,7 +30,8 @@ class TrainerProfileForm extends Component {
       name: '',
       gym: '',
       gender: '',
-      career:''
+      career:'',
+      dates: []
     })
   }
 
@@ -53,9 +62,7 @@ class TrainerProfileForm extends Component {
             <option value="4년~5년">4년~5년</option>
             <option value="5년이상">5년~</option>
         </select>
-        <MultipleDatePicker
-          onSubmit={dates => console.log('selected date', dates)}
-        />
+        <MultipleDatePicker onSubmit={this.DateChange} />
         <button type="submit">등록</button>
       </form>
     );
