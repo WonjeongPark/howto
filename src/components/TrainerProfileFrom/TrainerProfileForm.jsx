@@ -42,19 +42,21 @@ class TrainerProfileForm extends Component {
           placeholder="이름"
           value={this.state.name}
           onChange={this.ProfileChange}
-          name="name"
+          name="name" required="required"
         />
         <input
           placeholder="헬스장이름"
           value={this.state.gym}
           onChange={this.ProfileChange}
-          name="gym"
+          name="gym" required="required"
         />
-        <select name="gender" value={this.state.value} onChange={this.ProfileChange}>
+        <select name="gender" required="required" value={this.state.value} onChange={this.ProfileChange}>
+            <option value="">성별</option>
             <option value="여성">여성</option>
             <option value="남성">남성</option>
         </select>
-        <select name="career" value={this.state.value} onChange={this.ProfileChange}>
+        <select name="career" required="required" value={this.state.value} onChange={this.ProfileChange}>
+            <option value="">지도경력</option>
             <option value="~1년">1년미만</option>
             <option value="1년~2년">1년~2년</option>
             <option value="2년~3년">2년~3년</option>
