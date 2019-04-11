@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import MultipleDatePicker from 'react-multiple-datepicker'
 
 
 class TrainerProfileForm extends Component {
@@ -53,7 +53,9 @@ class TrainerProfileForm extends Component {
             <option value="4년~5년">4년~5년</option>
             <option value="5년이상">5년~</option>
         </select>
-        
+        <MultipleDatePicker
+          onSubmit={dates => console.log('selected date', dates)}
+        />
         <button type="submit">등록</button>
       </form>
     );

@@ -13,7 +13,8 @@ class ProfileDashboard extends Component {
         name: '박원정',
         gym: '스포애니문정점',
         gender: '여성',
-        career:'1년~2년'
+        career:'1년~2년',
+        
       },
       {
         id:1,
