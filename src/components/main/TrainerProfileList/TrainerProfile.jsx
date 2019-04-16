@@ -9,6 +9,7 @@ class TrainerProfile extends Component {
           gym: '헬스장이름',
           gender:'',
           career:'',
+          dates: [],
           id: 0
         }
       }
@@ -38,7 +39,7 @@ class TrainerProfile extends Component {
           };
 
         const {
-            name, gym, gender, career, id
+            name, gym, gender, career, dates, id
           } = this.props.info;
         
         return (
@@ -51,9 +52,9 @@ class TrainerProfile extends Component {
                 <Grid.Column className="trainerprofile-right" width={9}>
                     <div>성별 : {gender}</div>
                     <div>경력 :  {career}</div>
-                    <Button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능요일 보기</Button>
+                    <Button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</Button>
                     {this.state.showPopup ? 
-                        <Popup text='운동가능시간'  closePopup={this.togglePopup.bind(this)}
+                        <Popup text={dates}  closePopup={this.togglePopup.bind(this)}
                         />
                         : null
                     }
