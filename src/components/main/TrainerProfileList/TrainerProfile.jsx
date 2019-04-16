@@ -11,8 +11,9 @@ class TrainerProfile extends Component {
           career:'',
           dates: [],
           id: 0
-        }
+        } 
       }
+      
       constructor() {
         super();
         this.state = {
@@ -39,7 +40,7 @@ class TrainerProfile extends Component {
           };
 
         const {
-            name, gym, gender, career, dates, id
+            name, gym, gender, career,dates, id
           } = this.props.info;
         
         return (
