@@ -11,22 +11,20 @@ class TrainerProfileForm extends Component {
     dates: []
   }
   ProfileChange = (e) => {
-    console.log(e);
+    // console.log(e);
     this.setState({
       [e.target.name]: e.target.value
     });
   }
 
-  dateChange = dates => {  
-    this.setState({ dates: dates });
-    // console.log(this.state)
-  }
-  handleDatesListChange = (id, dates)=> {
-    var dateS = this.state.dates.slice(); // Make a copy of the emails first.
-    dateS[id] = dates.value; // Update it with the modified email.
-    this.setState({dates: dates}); // Update the state.
+  dateChange = dates => {
+    // dates = JSON.stringify(dates)
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dates = dates.toLocaleString('ko-KR', options)
+    this.setState({ dates: [...dates] });
     console.log(this.state)
-}
+  }
+
 
   profileSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +49,7 @@ class TrainerProfileForm extends Component {
           name="name" required="required"
         />
         <input
-          placeholder="헬스장이름"
+          placeholder="헬스장이름 지점"
           value={this.state.gym}
           onChange={this.ProfileChange}
           name="gym" required="required"
@@ -70,7 +68,7 @@ class TrainerProfileForm extends Component {
             <option value="4년~5년">4년~5년</option>
             <option value="5년이상">5년~</option>
         </select>
-        <MultipleDatePicker onSubmit={this.handleDatesListChange} minDate={new Date()} />
+        <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
         <button type="submit">등록</button>
       </form>
     );

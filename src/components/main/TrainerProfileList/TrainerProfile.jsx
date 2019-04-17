@@ -6,10 +6,10 @@ class TrainerProfile extends Component {
     static defaultProps = {
         info: {
           name: '이름',
-          gym: '헬스장이름',
+          gym: '헬스장',
           gender:'',
           career:'',
-          dates: [],
+          dates:[],
           id: 0
         } 
       }
@@ -38,12 +38,17 @@ class TrainerProfile extends Component {
             padding: '8px',
             margin: '8px'
           };
-
-        const {
-            name, gym, gender, career,dates, id
-          } = this.props.info;
         
+        const dates = [...this.props.info.dates];
+        const dateslist = dates.join('')
+        // 문자열? Date?
+        const {
+            name, gym, gender, career,  id
+          } = this.props.info;
+        console.log(dateslist);
+
         return (
+          
             <Grid className="trainerprofile" style={style}>
                 <Grid.Column className="trainerprofile-left" width={5}>
                     <img alt="profilePhoto" src="https://randomuser.me/api/portraits/women/42.jpg"/>
@@ -53,9 +58,10 @@ class TrainerProfile extends Component {
                 <Grid.Column className="trainerprofile-right" width={9}>
                     <div>성별 : {gender}</div>
                     <div>경력 :  {career}</div>
+                    <div>날짜 :  {dates} </div>
                     <Button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</Button>
                     {this.state.showPopup ? 
-                        <Popup text={dates}  closePopup={this.togglePopup.bind(this)}
+                        <Popup text="ㅇㅇ"  closePopup={this.togglePopup.bind(this)}
                         />
                         : null
                     }

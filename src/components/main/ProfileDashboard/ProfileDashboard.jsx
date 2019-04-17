@@ -14,7 +14,7 @@ class ProfileDashboard extends Component {
         gym: '스포애니문정점',
         gender: '여성',
         career:'1년~2년',
-        dates:[]
+        dates:['박원정시간','4567']
         
       },
       {
@@ -23,7 +23,7 @@ class ProfileDashboard extends Component {
         gym: '스포애니대전시청점',
         gender: '남성',
         career:'2년~3년',
-        dates:[]
+        dates:['정수시간','1234']
       }
     ]
   }
@@ -43,6 +43,8 @@ class ProfileDashboard extends Component {
 
   render() {
     const { information } = this.state;
+    // console.log(this.state)
+    // - dates OK
     return (
       <Grid>
             <Grid.Column width={8}>

@@ -3,7 +3,7 @@ import TrainerProfile from './TrainerProfile'
 
 class TrainerProfiles extends Component {
     static defaultProps = {
-        list: [],
+        data: [],
         onRemove: () => console.warn('onRemove not defined')
       }
 
