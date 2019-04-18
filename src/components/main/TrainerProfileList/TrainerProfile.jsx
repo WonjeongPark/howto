@@ -60,8 +60,8 @@ class TrainerProfile extends Component {
                     <div>경력 :  {career}</div>
                     <Button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</Button>
                     {this.state.showPopup ? 
-                        <Popup text={dateslist.split(',').map( dateslists => {
-                          return (<span>{dateslists}<br/></span>)
+                        <Popup className="popupTime" text={dateslist.split(',').map( dateslists => {
+                          return (<li>{dateslists}</li>)
                         })}  closePopup={this.togglePopup.bind(this)}
                         />
                         : null

@@ -13,6 +13,12 @@
     font-size: 13px;
     font-weight: 700;
 }
-/* .popup .popup_inner {
-
-} */
+.trainerprofile-right li {
+    list-style: none;
+    font-size : 15px;
+    line-height: 20px;
+}
+.popup .popup_inner{
+    max-height: 100px;
+    overflow: scroll;
+}

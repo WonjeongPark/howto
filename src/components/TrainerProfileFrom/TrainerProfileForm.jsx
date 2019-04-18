@@ -69,7 +69,7 @@ class TrainerProfileForm extends Component {
             <option value="4년~5년">4년~5년</option>
             <option value="5년이상">5년~</option>
         </select>
-        <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
+        <MultipleDatePicker key="" onSubmit={this.dateChange} minDate={new Date()} />
         <button type="submit">등록</button>
       </form>
     );
