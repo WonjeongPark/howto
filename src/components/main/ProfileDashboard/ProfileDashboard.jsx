@@ -14,7 +14,7 @@ class ProfileDashboard extends Component {
         gym: '스포애니문정점',
         gender: '여성',
         career:'1년~2년',
-        dates:['2019년 4월 29일 월요일,2019년 4월 30일 화요일']
+        dates:[new Date(2019,3,29), new Date(2019,3,30)]
         
       },
       {
@@ -23,7 +23,7 @@ class ProfileDashboard extends Component {
         gym: '스포애니대전시청점',
         gender: '남성',
         career:'2년~3년',
-        dates:['2019년 4월 29일 월요일,2019년 4월 30일 화요일']
+        dates:[new Date(2019,4,1), new Date(2019,4,5), new Date(2019,4,8)]
       }
     ]
   }

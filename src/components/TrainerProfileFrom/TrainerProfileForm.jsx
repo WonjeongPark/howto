@@ -18,9 +18,7 @@ class TrainerProfileForm extends Component {
   }
 
   dateChange = dates => {
-    // dates = JSON.stringify(dates)
-    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    dates = dates.toLocaleString('ko-KR', options)
+    //console.log(dates);
     this.setState({ dates: [...dates] });
     console.log(this.state)
   }

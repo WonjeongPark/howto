@@ -40,12 +40,12 @@ class TrainerProfile extends Component {
           };
         
         const dates = [...this.props.info.dates];
-        const dateslist = dates.join('')
+        console.log(dates);
+        const datesformat = dates.toLocaleString("ko-KR", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
         // 문자열? Date?
         const {
             name, gym, gender, career,  id
           } = this.props.info;
-        console.log(dateslist);
 
         return (
           
@@ -60,9 +60,7 @@ class TrainerProfile extends Component {
                     <div>경력 :  {career}</div>
                     <Button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</Button>
                     {this.state.showPopup ? 
-                        <Popup className="popupTime" text={dateslist.split(',').map( dateslists => {
-                          return (<li>{dateslists}</li>)
-                        })}  closePopup={this.togglePopup.bind(this)}
+                        <Popup className="popupTime" text={datesformat} closePopup={this.togglePopup.bind(this)}
                         />
                         : null
                     }

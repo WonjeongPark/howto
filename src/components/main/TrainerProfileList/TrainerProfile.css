@@ -22,3 +22,9 @@
     max-height: 100px;
     overflow: scroll;
 }
+
+.popupTime {
+    list-style: none;
+    font-size : 15px;
+    line-height: 20px;
+}
