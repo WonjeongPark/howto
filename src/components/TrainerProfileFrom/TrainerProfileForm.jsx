@@ -24,6 +24,7 @@ class TrainerProfileForm extends Component {
     this.setState({ dates: [...dates] });
     console.log(this.state)
   }
+  //dateChange -> ProfileChange로 refactoring?
 
 
   profileSubmit = (e) => {

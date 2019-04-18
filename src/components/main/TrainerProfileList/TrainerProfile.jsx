@@ -55,13 +55,14 @@ class TrainerProfile extends Component {
                     <div className="trainer-name">{name}</div>
                     <div className="trainer-gym">{gym}</div>
                 </Grid.Column>
-                <Grid.Column className="trainerprofile-right" width={9}>
+                <Grid.Column className="trainerprofile-right" width={11}>
                     <div>성별 : {gender}</div>
                     <div>경력 :  {career}</div>
-                    <div>날짜 :  {dates} </div>
                     <Button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</Button>
                     {this.state.showPopup ? 
-                        <Popup text="ㅇㅇ"  closePopup={this.togglePopup.bind(this)}
+                        <Popup text={dateslist.split(',').map( dateslists => {
+                          return (<span>{dateslists}<br/></span>)
+                        })}  closePopup={this.togglePopup.bind(this)}
                         />
                         : null
                     }
