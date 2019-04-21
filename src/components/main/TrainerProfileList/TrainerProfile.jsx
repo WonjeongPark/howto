@@ -40,8 +40,9 @@ class TrainerProfile extends Component {
           };
         
         const dates = [...this.props.info.dates];
-        console.log(dates);
-        const datesformat = dates.toLocaleString("ko-KR", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
+        // console.log(dates);
+        const datesformat = dates.toLocaleString("ko-KR",
+        { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
         // 문자열? Date?
         const {
             name, gym, gender, career,  id
@@ -58,15 +59,15 @@ class TrainerProfile extends Component {
                 <Grid.Column className="trainerprofile-right" width={11}>
                     <div>성별 : {gender}</div>
                     <div>경력 :  {career}</div>
-                    <Button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</Button>
+                    <button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</button>
                     {this.state.showPopup ? 
-                        <Popup className="popupTime" text={datesformat} closePopup={this.togglePopup.bind(this)}
+                        <Popup  text={datesformat} closePopup={this.togglePopup.bind(this)}
                         />
                         : null
                     }
                     <div>오른쪽에서 운동영상 보기</div>
-                    <div>수강생평가(팝업창 ?){id}</div>
-                    <button onClick={this.profileRemove}>해당 트레이너 그만보기</button>
+                    <div>수강생평가 : {id}</div>
+                    <Button className="delete" onClick={this.profileRemove}>해당 트레이너 그만보기</Button>
                 </Grid.Column>
             </Grid>
         )
@@ -77,7 +78,9 @@ class Popup extends React.Component {
       return (
         <div className='popup'>
           <div className='popup_inner'>
-            <h1>{this.props.text}</h1>
+          {this.props.text.split('\n').map((item, key) => {
+                  return <span key={key}>{item}<br/></span>
+                })}
           </div>
         </div>
       );

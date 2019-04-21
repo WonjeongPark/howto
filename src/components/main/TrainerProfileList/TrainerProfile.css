@@ -7,20 +7,24 @@
     width : 150px;
 }
 
-.trainerprofile-right div, 
+.trainerprofile-right, 
 .trainerprofile-right Button{
-    padding: 4px;
+    padding: 5px 10px;
     font-size: 13px;
     font-weight: 700;
+    line-height: 30px;
 }
-.trainerprofile-right li {
-    list-style: none;
-    font-size : 15px;
-    line-height: 20px;
+.trainerprofile-right .delete {
+    margin: 0px;
+    cursor: pointer;
+    float : right;
 }
+
+
 .popup .popup_inner{
-    max-height: 100px;
+    max-height: 70px;
     overflow: scroll;
+    font-size : 15px;
 }
 
 .popupTime {
