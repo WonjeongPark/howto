@@ -51,12 +51,12 @@ class TrainerProfile extends Component {
         return (
           
             <Grid className="trainerprofile" style={style}>
-                <Grid.Column className="trainerprofile-left" width={5}>
+                <Grid.Column className="trainerprofile-left" width={6}>
                     <img alt="profilePhoto" src="https://randomuser.me/api/portraits/women/42.jpg"/>
                     <div className="trainer-name">{name}</div>
                     <div className="trainer-gym">{gym}</div>
                 </Grid.Column>
-                <Grid.Column className="trainerprofile-right" width={11}>
+                <Grid.Column className="trainerprofile-right" width={10}>
                     <div>성별 : {gender}</div>
                     <div>경력 :  {career}</div>
                     <button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</button>

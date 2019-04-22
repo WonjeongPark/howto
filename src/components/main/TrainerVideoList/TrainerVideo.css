@@ -2,3 +2,12 @@
     border : 1px solid black;
     height: 150px;
 }
+.trainervideo-right div{
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+}
+.trainervideo-right Icon{
+    padding: 0 15px;
+}

@@ -47,12 +47,12 @@ class ProfileDashboard extends Component {
     // - dates OK
     return (
       <Grid>
-            <Grid.Column width={8}>
+            <Grid.Column width={7}>
             <TrainerProfileForm
             onCreate={this.profileCreate}/>
             <TrainerProfiles data={information} onRemove={this.profileRemove}/>
             </Grid.Column>
-            <Grid.Column width={6}>
+            <Grid.Column width={9}>
             <TrainerVideos/>
             </Grid.Column>
       </Grid>

@@ -4,9 +4,17 @@ import TrainerVideo from './TrainerVideo'
 class TrainerVideos extends Component {
 
   render() {
+    const style = {
+      height: '500px',
+      overflow: 'scroll'
+      
+    }
     return (
-      <div>
-        <h1>TrainerVideos</h1>
+      <div style={style}>
+        <TrainerVideo />
+        <TrainerVideo />
+        <TrainerVideo />
+        <TrainerVideo />
         <TrainerVideo />
       </div>
     )

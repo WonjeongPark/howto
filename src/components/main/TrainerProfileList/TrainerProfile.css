@@ -5,6 +5,8 @@
 
 .trainerprofile-left, .trainerprofile-left img  {
     width : 150px;
+    height: 150px;
+    align-items: center;
 }
 
 .trainerprofile-right, 
