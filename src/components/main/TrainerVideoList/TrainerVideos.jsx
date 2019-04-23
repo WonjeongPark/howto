@@ -1,23 +1,28 @@
-import React, { Component } from 'react'
+
+import React, { Component } from 'react';
 import TrainerVideo from './TrainerVideo'
 
 class TrainerVideos extends Component {
+    static defaultProps = {
+        data: []
+      }
 
-  render() {
-    const style = {
-      height: '500px',
-      overflow: 'scroll'
-      
-    }
+    render() {
+    const { data} = this.props;
+    const list = data.map(
+      info => (
+      <TrainerVideo
+       key={info.id}
+       info={info}
+       />)
+    );
+
     return (
-      <div style={style}>
-        <TrainerVideo />
-        <TrainerVideo />
-        <TrainerVideo />
-        <TrainerVideo />
-        <TrainerVideo />
+      <div>
+        {list}    
       </div>
-    )
+    );
   }
 }
+
 export default TrainerVideos;

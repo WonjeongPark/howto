@@ -3,11 +3,12 @@
     height: 150px;
 }
 .trainervideo-right div{
-    margin: 10px;
+    margin: 5px;
     font-size: 15px;
     font-weight: 700;
     line-height: 22px;
 }
-.trainervideo-right Icon{
-    padding: 0 15px;
+.trainervideo-right .icon{
+    margin: 10px 10px 0 0;
+    cursor: pointer;
 }

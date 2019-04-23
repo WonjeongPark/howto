@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import { Grid, Icon } from 'semantic-ui-react'
 import './TrainerVideo.css';
-import TrainerVideofile from './TrainerVideofile'
+// import TrainerVideofile from './TrainerVideofile'
 
 
 class TrainerVideo extends Component {
+  static defaultProps = {
+    info: {
+      name: '이름',
+      gym: '헬스장',
+      id: 0
+    } 
+  }
   render() {
     const style = {
       border: '1px solid black',
@@ -16,20 +23,26 @@ class TrainerVideo extends Component {
       width: '350px',
       height: '197px'
     }
+    const {
+      name, gym, id
+    } = this.props.info;
     return (
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
                     {/* <TrainerVideofile/> */}
                     <div className="videoSection" style={videoSectionStyle}>TrainerVideofile</div>
                 </Grid.Column>
-                <Grid.Column className="trainervideo-right" width={5}>
-                    <div>Name : </div>
-                    <div>Gym : </div>
+                <Grid.Column className="trainervideo-right" width={6}>
+                    <div>Name : {name}{id}</div>
+                    <div>Gym : {gym}</div>
                     <div>운동부위 : </div>
                     <div>권장운동량 : </div>
-                    <div><Icon name="heart outline" size="large"/>
-                    <Icon name="comments outline" size="large"/>
-                    <Icon name="external alternate"size="large" /></div>
+                    
+                    <div >
+                    <Icon className="icon" name="heart outline" size="large"/>
+                    <Icon className="icon" name="comments outline" size="large"/>
+                    <Icon className="icon" name="share square" size="large" />
+                    </div>
                     
                 </Grid.Column>
             </Grid>

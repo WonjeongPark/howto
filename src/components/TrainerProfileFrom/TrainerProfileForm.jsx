@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
-
+import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
   state = {
@@ -8,7 +8,10 @@ class TrainerProfileForm extends Component {
     gym: '',
     gender: '',
     career:'',
-    dates: []
+    dates: [],
+    bodypart: '',
+    set1:'',
+    set2:''
   }
   ProfileChange = (e) => {
     // console.log(e);
@@ -20,9 +23,9 @@ class TrainerProfileForm extends Component {
   dateChange = dates => {
     //console.log(dates);
     this.setState({ dates: [...dates] });
-    console.log(this.state)
+    // console.log(this.state)
   }
-  //dateChange -> ProfileChange로 refactoring?
+
 
 
   profileSubmit = (e) => {
@@ -33,12 +36,16 @@ class TrainerProfileForm extends Component {
       gym: '',
       gender: '',
       career:'',
-      dates: []
+      dates: [],
+      bodypart: '',
+      set1:'',
+      set2:''
     })
-    // console.log(this.state);
+    console.log(this.state);
   }
 
   render() {
+    
     return (
       <form onSubmit={this.profileSubmit}>
         <input
@@ -68,6 +75,17 @@ class TrainerProfileForm extends Component {
             <option value="5년이상">5년~</option>
         </select>
         <MultipleDatePicker key="" onSubmit={this.dateChange} minDate={new Date()} />
+        <div className="body" value={this.state.value} onChange={this.ProfileChange}>주요운동부위
+        <input type="radio" name="bodypart" value="등" />등
+        <input type="radio" name="bodypart" value="복부"/>복부
+        <input type="radio" name="bodypart" value="목"/>목
+        <input type="radio" name="bodypart" value="팔"/>팔
+        <input type="radio" name="bodypart" value="엉덩이"/>엉덩이
+        <input type="radio" name="bodypart" value="허벅지"/>허벅지
+        <input type="radio" name="bodypart" value="종아리"/>종아리
+        </div>
+        <Counter name="set" onChange={this.ProfileChange}/>
+        
         <button type="submit">등록</button>
       </form>
     );

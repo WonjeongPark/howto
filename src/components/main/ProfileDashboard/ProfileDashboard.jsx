@@ -53,7 +53,7 @@ class ProfileDashboard extends Component {
             <TrainerProfiles data={information} onRemove={this.profileRemove}/>
             </Grid.Column>
             <Grid.Column width={9}>
-            <TrainerVideos/>
+            <TrainerVideos data={information}/>
             </Grid.Column>
       </Grid>
     )
