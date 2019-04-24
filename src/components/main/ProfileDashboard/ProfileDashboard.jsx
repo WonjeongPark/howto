@@ -14,7 +14,10 @@ class ProfileDashboard extends Component {
         gym: '스포애니문정점',
         gender: '여성',
         career:'1년~2년',
-        dates:[new Date(2019,3,29), new Date(2019,6,20), new Date(2019,6,22), new Date(2019,7,3)]
+        dates:[new Date(2019,3,29), new Date(2019,6,20), new Date(2019,6,22), new Date(2019,7,3)],
+        bodypart:'목',
+        count:'10',
+        set:'3',
         
       },
       {
@@ -23,7 +26,10 @@ class ProfileDashboard extends Component {
         gym: '스포애니대전시청점',
         gender: '남성',
         career:'2년~3년',
-        dates:[new Date(2019,4,1), new Date(2019,4,5), new Date(2019,4,8), new Date(2019,4,30), new Date(2019,5,11)]
+        dates:[new Date(2019,4,1), new Date(2019,4,5), new Date(2019,4,8), new Date(2019,4,30), new Date(2019,5,11)],
+        bodypart:'등',
+        count:'12',
+        set:'2'
       }
     ]
   }

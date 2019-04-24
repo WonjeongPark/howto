@@ -6,7 +6,7 @@ import { Player, ControlBar } from 'video-react';
 
 export default props => {
   return (
-    <Player playsInline fluid={false} width={100} height={50}>
+    <Player playsInline fluid={false} width={10} height={5}>
       <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"/>
       <ControlBar>
           

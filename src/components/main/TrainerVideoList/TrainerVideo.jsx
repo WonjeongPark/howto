@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Icon } from 'semantic-ui-react'
 import './TrainerVideo.css';
-// import TrainerVideofile from './TrainerVideofile'
+import TrainerVideofile from './TrainerVideofile'
 
 
 class TrainerVideo extends Component {
@@ -9,6 +9,9 @@ class TrainerVideo extends Component {
     info: {
       name: '이름',
       gym: '헬스장',
+      bodypart:'',
+      count: '',
+      set:'',
       id: 0
     } 
   }
@@ -24,19 +27,19 @@ class TrainerVideo extends Component {
       height: '197px'
     }
     const {
-      name, gym, id
+      name, gym, count, set, bodypart, id
     } = this.props.info;
     return (
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
-                    {/* <TrainerVideofile/> */}
+                    <TrainerVideofile/>
                     <div className="videoSection" style={videoSectionStyle}>TrainerVideofile</div>
                 </Grid.Column>
                 <Grid.Column className="trainervideo-right" width={6}>
                     <div>Name : {name}{id}</div>
                     <div>Gym : {gym}</div>
-                    <div>운동부위 : </div>
-                    <div>권장운동량 : </div>
+                    <div>운동부위 : {bodypart}</div>
+                    <div>권장운동량 : {count}회 {set}set</div>
                     
                     <div >
                     <Icon className="icon" name="heart outline" size="large"/>

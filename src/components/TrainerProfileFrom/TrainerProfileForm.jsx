@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
-import Counter from './Counter'
+// import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
   state = {
@@ -10,8 +10,8 @@ class TrainerProfileForm extends Component {
     career:'',
     dates: [],
     bodypart: '',
-    set1:'',
-    set2:''
+    count: '',
+    set:''
   }
   ProfileChange = (e) => {
     // console.log(e);
@@ -38,14 +38,13 @@ class TrainerProfileForm extends Component {
       career:'',
       dates: [],
       bodypart: '',
-      set1:'',
-      set2:''
+      count:'',
+      set:''
     })
     console.log(this.state);
   }
 
   render() {
-    
     return (
       <form onSubmit={this.profileSubmit}>
         <input
@@ -75,7 +74,7 @@ class TrainerProfileForm extends Component {
             <option value="5년이상">5년~</option>
         </select>
         <MultipleDatePicker key="" onSubmit={this.dateChange} minDate={new Date()} />
-        <div className="body" value={this.state.value} onChange={this.ProfileChange}>주요운동부위
+        <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
         <input type="radio" name="bodypart" value="등" />등
         <input type="radio" name="bodypart" value="복부"/>복부
         <input type="radio" name="bodypart" value="목"/>목
@@ -84,8 +83,23 @@ class TrainerProfileForm extends Component {
         <input type="radio" name="bodypart" value="허벅지"/>허벅지
         <input type="radio" name="bodypart" value="종아리"/>종아리
         </div>
-        <Counter name="set" onChange={this.ProfileChange}/>
-        
+        <select name="count" required="required" value={this.state.value} onChange={this.ProfileChange}>
+            <option value="">횟수</option>
+            <option value="6">6회</option>
+            <option value="8">8회</option>
+            <option value="10">10회</option>
+            <option value="12">12회</option>
+            <option value="14">14회</option>
+        </select>
+        <select name="set" required="required" value={this.state.value} onChange={this.ProfileChange}>
+            <option value="">반복set</option>
+            <option value="1set">1set</option>
+            <option value="2set">2set</option>
+            <option value="3set">3set</option>
+            <option value="4set">4set</option>
+        </select>
+        <input type="text"/>
+        {/* <Counter  /> */}
         <button type="submit">등록</button>
       </form>
     );
