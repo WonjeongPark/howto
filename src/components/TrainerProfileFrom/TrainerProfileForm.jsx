@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
-// import Counter from './Counter'
+import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
   state = {
