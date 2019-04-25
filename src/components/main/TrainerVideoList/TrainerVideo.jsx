@@ -33,7 +33,6 @@ class TrainerVideo extends Component {
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
                     <TrainerVideofile/>
-                    <div className="videoSection" style={videoSectionStyle}>TrainerVideofile</div>
                 </Grid.Column>
                 <Grid.Column className="trainervideo-right" width={6}>
                     <div>Name : {name}{id}</div>

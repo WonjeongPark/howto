@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
-// import Counter from './Counter'
+import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
   state = {
@@ -14,7 +14,6 @@ class TrainerProfileForm extends Component {
     set:''
   }
   ProfileChange = (e) => {
-    // console.log(e);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -99,7 +98,7 @@ class TrainerProfileForm extends Component {
             <option value="4set">4set</option>
         </select>
         <input type="text"/>
-        {/* <Counter  /> */}
+        <Counter/>
         <button type="submit">등록</button>
       </form>
     );
