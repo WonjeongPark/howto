@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
     function Counter(){
     const [count, setCount] = useState(10);
-    const [set2, set2Time] = useState(3);
+    const [set, setSet] = useState(3);
     // console.log(set1)
     
     return(

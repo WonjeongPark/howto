@@ -21,11 +21,6 @@ class TrainerVideo extends Component {
       padding: '8px',
       margin: '8px'
     };
-    const videoSectionStyle = {
-      border: '1px solid black',
-      width: '350px',
-      height: '197px'
-    }
     const {
       name, gym, count, set, bodypart, id
     } = this.props.info;
