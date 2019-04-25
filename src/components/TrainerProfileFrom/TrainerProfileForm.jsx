@@ -25,7 +25,7 @@ class TrainerProfileForm extends Component {
     // console.log(this.state)
   }
 
-
+  value = "value!";
 
   profileSubmit = (e) => {
     e.preventDefault();
