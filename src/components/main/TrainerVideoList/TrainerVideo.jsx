@@ -21,19 +21,15 @@ class TrainerVideo extends Component {
       padding: '8px',
       margin: '8px'
     };
-    const videoSectionStyle = {
-      border: '1px solid black',
-      width: '350px',
-      height: '197px'
-    }
     const {
       name, gym, count, set, bodypart, id
     } = this.props.info;
     return (
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
+                    <div className="videoSection" >
                     <TrainerVideofile/>
-                    <div className="videoSection" style={videoSectionStyle}>TrainerVideofile</div>
+                    </div>
                 </Grid.Column>
                 <Grid.Column className="trainervideo-right" width={6}>
                     <div>Name : {name}{id}</div>

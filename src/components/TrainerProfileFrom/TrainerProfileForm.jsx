@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
-// import Counter from './Counter'
+import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
   state = {
@@ -14,7 +14,7 @@ class TrainerProfileForm extends Component {
     set:''
   }
   ProfileChange = (e) => {
-    // console.log(e);
+    console.log(e);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -73,7 +73,7 @@ class TrainerProfileForm extends Component {
             <option value="4년~5년">4년~5년</option>
             <option value="5년이상">5년~</option>
         </select>
-        <MultipleDatePicker key="" onSubmit={this.dateChange} minDate={new Date()} />
+        <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
         <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
         <input type="radio" name="bodypart" value="등" />등
         <input type="radio" name="bodypart" value="복부"/>복부
@@ -83,7 +83,7 @@ class TrainerProfileForm extends Component {
         <input type="radio" name="bodypart" value="허벅지"/>허벅지
         <input type="radio" name="bodypart" value="종아리"/>종아리
         </div>
-        <select name="count" required="required" value={this.state.value} onChange={this.ProfileChange}>
+        {/* <select name="count" required="required" value={this.state.value} onChange={this.ProfileChange}>
             <option value="">횟수</option>
             <option value="6">6회</option>
             <option value="8">8회</option>
@@ -97,9 +97,9 @@ class TrainerProfileForm extends Component {
             <option value="2set">2set</option>
             <option value="3set">3set</option>
             <option value="4set">4set</option>
-        </select>
+        </select> */}
         <input type="text"/>
-        {/* <Counter  /> */}
+        <Counter onChange={this.ProfileChange} value={console.log(this.value)}/>
         <button type="submit">등록</button>
       </form>
     );
