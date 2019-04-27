@@ -26,7 +26,9 @@ class TrainerProfileForm extends Component {
     // console.log(this.state)
   }
 
+  onCountChange = () => {
 
+  }
 
   profileSubmit = (e) => {
     e.preventDefault();
@@ -45,6 +47,7 @@ class TrainerProfileForm extends Component {
   }
 
   render() {
+    const { count } = this.props
     return (
       <form onSubmit={this.profileSubmit}>
         <input
@@ -99,7 +102,15 @@ class TrainerProfileForm extends Component {
             <option value="4set">4set</option>
         </select> */}
         <input type="text"/>
-        <Counter onChange={this.ProfileChange} value={console.log(this.value)}/>
+        <Counter>
+        <input
+          type="text"
+          name="count"
+          value={count}
+          onChange={this.ProfileChange}
+        />
+        </Counter>
+      
         <button type="submit">등록</button>
       </form>
     );
