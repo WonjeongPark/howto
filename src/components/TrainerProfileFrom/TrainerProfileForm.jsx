@@ -3,6 +3,7 @@ import MultipleDatePicker from 'react-multiple-datepicker'
 import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
+  
   state = {
     name: '',
     gym: '',
@@ -19,15 +20,17 @@ class TrainerProfileForm extends Component {
       [e.target.name]: e.target.value
     });
   }
+  countChange = (countname, countvalue) => {
+    console.log(countname)
+    this.setState({
+      [countname]: countvalue
+    });
+  }
 
   dateChange = dates => {
     //console.log(dates);
     this.setState({ dates: [...dates] });
     // console.log(this.state)
-  }
-
-  onCountChange = () => {
-
   }
 
   profileSubmit = (e) => {
@@ -47,7 +50,6 @@ class TrainerProfileForm extends Component {
   }
 
   render() {
-    const { count } = this.props
     return (
       <form onSubmit={this.profileSubmit}>
         <input
@@ -101,16 +103,8 @@ class TrainerProfileForm extends Component {
             <option value="3set">3set</option>
             <option value="4set">4set</option>
         </select> */}
-        <input type="text"/>
-        <Counter>
-        <input
-          type="text"
-          name="count"
-          value={count}
-          onChange={this.ProfileChange}
-        />
-        </Counter>
-      
+        <Counter countname="count" count={this.state.value} onChangeCount={this.countChange} />
+        
         <button type="submit">등록</button>
       </form>
     );
