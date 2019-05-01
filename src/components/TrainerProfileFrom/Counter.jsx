@@ -5,10 +5,15 @@ export const Counter=({onChangeCount, countvalue, countname})=>{
       
     const [count, setCount] = useState(10);
     const [set, setSet] = useState(3);
-    // function increment(){
-    //   setCount(count + 1)
-    //   return count;
-    // };
+    function increment(){
+      setCount(count + 1)
+      countvalue = count
+      onChangeCount(countname, countvalue)
+    };
+    // const changeFromCount = () => {
+    //   [ ]
+    //   this.props.onChangeCount(countname, countvalue);
+    // }
     console.log(count)
     return(
       
@@ -18,7 +23,7 @@ export const Counter=({onChangeCount, countvalue, countname})=>{
         onChange={onChangeCount}
       />  
       회
-        <button type="button" countname="count" value={count} onClick={() => onChangeCount(countname, setCount(count + 1))} >+1</button>
+        <button type="button" countname="count" value={count} onClick={() => increment()} >+1</button>
         <button type="button" countname="count" value={count} onClick={() => onChangeCount(countname, setCount(count - 1))} >-1</button>
         <br />
 

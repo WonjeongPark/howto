@@ -11,7 +11,7 @@ class TrainerProfileForm extends Component {
     career:'',
     dates: [],
     bodypart: '',
-    count: '',
+    count: 10,
     set:''
   }
   ProfileChange = (e) => {
@@ -20,11 +20,14 @@ class TrainerProfileForm extends Component {
       [e.target.name]: e.target.value
     });
   }
-  countChange = (countname, countvalue) => {
-    console.log(countname)
+  countChange = (countname, count) => {
+    console.log(countname, count)
     this.setState({
-      [countname]: countvalue
+      [countname]: count
     });
+  }
+  componentDidMount() {
+    console.log('componentDidMount');
   }
 
   dateChange = dates => {
@@ -103,7 +106,7 @@ class TrainerProfileForm extends Component {
             <option value="3set">3set</option>
             <option value="4set">4set</option>
         </select> */}
-        <Counter countname="count" count={this.state.value} onChangeCount={this.countChange} />
+        <Counter countname="count" countvalue={this.state.value} onChangeCount={this.countChange} />
         
         <button type="submit">등록</button>
       </form>
