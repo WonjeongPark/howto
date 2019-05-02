@@ -35,7 +35,6 @@ export const Counter=({onChangeCount, countvalue, countname})=>{
        /> set 반복
         <button type="button" onClick={() => setSet(set + 1)}>+1</button>
         <button type="button" onClick={() => setSet(set - 1)}>-1</button>
-        </div>)
-        }
+        </div>)}
  
  export default Counter

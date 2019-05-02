@@ -15,7 +15,6 @@ class TrainerProfileForm extends Component {
     set:''
   }
   ProfileChange = (e) => {
-    console.log(e);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -81,7 +80,7 @@ class TrainerProfileForm extends Component {
             <option value="4년~5년">4년~5년</option>
             <option value="5년이상">5년~</option>
         </select>
-        <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
+        <MultipleDatePicker key="" onSubmit={this.dateChange} minDate={new Date()} />
         <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
         <input type="radio" name="bodypart" value="등" />등
         <input type="radio" name="bodypart" value="복부"/>복부
@@ -91,7 +90,7 @@ class TrainerProfileForm extends Component {
         <input type="radio" name="bodypart" value="허벅지"/>허벅지
         <input type="radio" name="bodypart" value="종아리"/>종아리
         </div>
-        {/* <select name="count" required="required" value={this.state.value} onChange={this.ProfileChange}>
+        {/*<select name="count" required="required" value={this.state.value} onChange={this.ProfileChange}>
             <option value="">횟수</option>
             <option value="6">6회</option>
             <option value="8">8회</option>

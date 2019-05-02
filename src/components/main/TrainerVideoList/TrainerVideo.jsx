@@ -27,9 +27,7 @@ class TrainerVideo extends Component {
     return (
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
-                    <div className="videoSection" >
                     <TrainerVideofile/>
-                    </div>
                 </Grid.Column>
                 <Grid.Column className="trainervideo-right" width={6}>
                     <div>Name : {name}{id}</div>
