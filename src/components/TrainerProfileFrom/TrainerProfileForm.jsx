@@ -16,7 +16,6 @@ class TrainerProfileForm extends Component {
     set:''
   }
   ProfileChange = (e) => {
-    console.log(e);
     this.setState({
       [e.target.name]: e.target.value
     });
