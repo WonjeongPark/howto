@@ -11,7 +11,8 @@ class TrainerProfileForm extends Component {
     career:'',
     dates: [],
     bodypart: '',
-    count: 10,
+    videoUrl:'',
+    count: '',
     set:''
   }
   ProfileChange = (e) => {
@@ -26,10 +27,12 @@ class TrainerProfileForm extends Component {
       [countname]: count
     });
   }
-  componentDidMount() {
-    console.log('componentDidMount');
+  setChange = (setname, set) => {
+    console.log(setname, set)
+    this.setState({
+      [setname]: set
+    });
   }
-
   dateChange = dates => {
     //console.log(dates);
     this.setState({ dates: [...dates] });
@@ -46,6 +49,7 @@ class TrainerProfileForm extends Component {
       career:'',
       dates: [],
       bodypart: '',
+      videoUrl:'',
       count:'',
       set:''
     })
@@ -82,6 +86,10 @@ class TrainerProfileForm extends Component {
             <option value="5년이상">5년~</option>
         </select>
         <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
+        동영상URL : 
+        <input type="text" name="videoUrl" value={this.state.value} onChange={this.ProfileChange}
+        placeholder="https://www.youtube.com/watch?v=FjU-r49Eu2o"/>
+
         <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
         <input type="radio" name="bodypart" value="등" />등
         <input type="radio" name="bodypart" value="복부"/>복부
@@ -91,22 +99,8 @@ class TrainerProfileForm extends Component {
         <input type="radio" name="bodypart" value="허벅지"/>허벅지
         <input type="radio" name="bodypart" value="종아리"/>종아리
         </div>
-        {/* <select name="count" required="required" value={this.state.value} onChange={this.ProfileChange}>
-            <option value="">횟수</option>
-            <option value="6">6회</option>
-            <option value="8">8회</option>
-            <option value="10">10회</option>
-            <option value="12">12회</option>
-            <option value="14">14회</option>
-        </select>
-        <select name="set" required="required" value={this.state.value} onChange={this.ProfileChange}>
-            <option value="">반복set</option>
-            <option value="1set">1set</option>
-            <option value="2set">2set</option>
-            <option value="3set">3set</option>
-            <option value="4set">4set</option>
-        </select> */}
-        <Counter countname="count" countvalue={this.state.value} onChangeCount={this.countChange} />
+        <Counter countname="count" countvalue={this.state.value} onChangeCount={this.countChange}
+         setname="set"  setvalue={this.state.value} onChangeSet={this.setChange} />
         
         <button type="submit">등록</button>
       </form>
