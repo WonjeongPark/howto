@@ -10,7 +10,7 @@ class TrainerVideo extends Component {
       name: '이름',
       gym: '헬스장',
       bodypart:'',
-      videoUrl:'',
+      playerSource: '',
       count: '',
       set:'',
       id: 0
@@ -23,13 +23,13 @@ class TrainerVideo extends Component {
       margin: '8px'
     };
     const {
-      name, gym, count, set, bodypart, videoUrl, id
+      name, gym, count, set, bodypart, playerSource, id
     } = this.props.info;
     return (
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
                     <div className="videoSection" >
-                    <TrainerVideofile videosrc ={videoUrl}/>
+                    <TrainerVideofile videosrc ={playerSource}/>
                     </div>
                 </Grid.Column>
                 <Grid.Column className="trainervideo-right" width={6}>

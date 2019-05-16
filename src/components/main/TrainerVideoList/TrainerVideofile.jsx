@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "../../../../node_modules/video-react/dist/video-react.css"
-import { Player, ControlBar, PosterImage  } from 'video-react';
+import { Player, ControlBar } from 'video-react';
 
 
 
-class TrainerVideofile extends Component {
-  render() {
+export const TrainerVideofile=(videosrc)=>{
+  console.log(videosrc)
     return (
-    <Player playsInline fluid={false} width={350} height={197} >
-      <PosterImage poster="" />
-      <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"/>
+    <Player src='videosrc' playsInline fluid={false} width={350} height={197} >
       <ControlBar autoHide={true} className="my-class" />
     </Player>
   )};
-};
 export default TrainerVideofile;

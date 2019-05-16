@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
+import { Button } from 'semantic-ui-react'
 import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
@@ -11,25 +12,25 @@ class TrainerProfileForm extends Component {
     career:'',
     dates: [],
     bodypart: '',
-    videoUrl:'',
+    playerSource: '',
+    inputVideoUrl: '',
     count: '',
     set:''
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.playerSource !== prevState.playerSource) {
+      this.refs.player.load();
+    }
   }
   ProfileChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
-  countChange = (countname, count) => {
-    console.log(countname, count)
+  counterChange = (countername, counter) => {
+    console.log(countername, counter)
     this.setState({
-      [countname]: count
-    });
-  }
-  setChange = (setname, set) => {
-    console.log(setname, set)
-    this.setState({
-      [setname]: set
+      [countername]: counter
     });
   }
   dateChange = dates => {
@@ -53,6 +54,11 @@ class TrainerProfileForm extends Component {
       set:''
     })
     console.log(this.state);
+  }
+  updatePlayerInfo() {
+    this.setState({
+      playerSource: this.state.inputVideoUrl
+    });
   }
 
   render() {
@@ -86,8 +92,10 @@ class TrainerProfileForm extends Component {
         </select>
         <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
         동영상URL : 
-        <input type="text" name="videoUrl" value={this.state.value} onChange={this.ProfileChange}
-        placeholder="https://www.youtube.com/watch?v=FjU-r49Eu2o"/>
+        <input ref="inputVideoUrl" name="inputVideoUrl" id="inputVideoUrl"
+        value={this.state.value} onChange={this.ProfileChange}
+        placeholder=""/>
+        <Button type="button" onClick={this.updatePlayerInfo}>Update</Button>
 
         <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
         <input type="radio" name="bodypart" value="등" />등
@@ -98,8 +106,8 @@ class TrainerProfileForm extends Component {
         <input type="radio" name="bodypart" value="허벅지"/>허벅지
         <input type="radio" name="bodypart" value="종아리"/>종아리
         </div>
-        <Counter countname="count" countvalue={this.state.value} onChangeCount={this.countChange}
-         setname="set"  setvalue={this.state.value} onChangeSet={this.setChange} />
+        <Counter countname="count" countvalue={this.state.value} onChangeCounter={this.counterChange}
+         setname="set"  setvalue={this.state.value} />
         
         <button type="submit">등록</button>
       </form>
