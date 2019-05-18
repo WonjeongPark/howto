@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Grid, Icon } from 'semantic-ui-react'
 import './TrainerVideo.css';
-import TrainerVideofile from './TrainerVideofile'
+import "../../../../node_modules/video-react/dist/video-react.css"
+import { Player, ControlBar } from 'video-react';
 
 
 class TrainerVideo extends Component {
@@ -29,7 +30,9 @@ class TrainerVideo extends Component {
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
                     <div className="videoSection" >
-                    <TrainerVideofile videosrc ={playerSource}/>
+                    <Player src={playerSource} playsInline fluid={false} width={350} height={197} >
+                      <ControlBar autoHide={true} className="playerSource" />
+                    </Player>
                     </div>
                 </Grid.Column>
                 <Grid.Column className="trainervideo-right" width={6}>

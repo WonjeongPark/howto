@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MultipleDatePicker from 'react-multiple-datepicker'
-import { Button } from 'semantic-ui-react'
+// import { Button } from 'semantic-ui-react'
 import Counter from './Counter'
 
 class TrainerProfileForm extends Component {
@@ -13,15 +13,15 @@ class TrainerProfileForm extends Component {
     dates: [],
     bodypart: '',
     playerSource: '',
-    inputVideoUrl: '',
     count: '',
     set:''
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.playerSource !== prevState.playerSource) {
-      this.refs.player.load();
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (this.state.playerSource !== prevState.playerSource) {
+  //     this.refs.player.load();
+  //     console.log(this.refs)
+  //   }
+  // }
   ProfileChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -55,11 +55,11 @@ class TrainerProfileForm extends Component {
     })
     console.log(this.state);
   }
-  updatePlayerInfo() {
-    this.setState({
-      playerSource: this.state.inputVideoUrl
-    });
-  }
+  // updatePlayerInfo() {
+  //   this.setState({
+  //     playerSource: this.state.inputVideoUrl
+  //   });
+  // }
 
   render() {
     return (
@@ -92,10 +92,10 @@ class TrainerProfileForm extends Component {
         </select>
         <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
         동영상URL : 
-        <input ref="inputVideoUrl" name="inputVideoUrl" id="inputVideoUrl"
+        <input ref="playerSource" name="playerSource" id="playerSource"
         value={this.state.value} onChange={this.ProfileChange}
         placeholder=""/>
-        <Button type="button" onClick={this.updatePlayerInfo}>Update</Button>
+        <div>http://media.w3.org/2010/05/bunny/trailer.mp4</div>
 
         <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
         <input type="radio" name="bodypart" value="등" />등

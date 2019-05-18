@@ -16,7 +16,7 @@ class ProfileDashboard extends Component {
         career:'1년~2년',
         dates:[new Date(2019,3,29), new Date(2019,6,20), new Date(2019,6,22), new Date(2019,7,3)],
         bodypart:'목',
-        playerSource:'https://youtu.be/osnmkYyqOno',
+        playerSource:'http://media.w3.org/2010/05/sintel/trailer.mp4',
         count:'10',
         set:'3',
         
@@ -51,6 +51,7 @@ class ProfileDashboard extends Component {
 
   render() {
     const { information } = this.state;
+    
     // console.log(this.state)
     // - dates OK
     return (
