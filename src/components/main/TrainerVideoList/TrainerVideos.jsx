@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import TrainerVideo from './TrainerVideo'
+import './TrainerVideos.css';
 
 class TrainerVideos extends Component {
     static defaultProps = {
@@ -16,9 +17,8 @@ class TrainerVideos extends Component {
        info={info}
        />)
     );
-
     return (
-      <div>
+      <div className="videoSection" >
         {list}    
       </div>
     );

@@ -91,10 +91,11 @@ class TrainerProfileForm extends Component {
             <option value="5년이상">5년~</option>
         </select>
         <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
+        <div>
         동영상URL : 
         <input ref="playerSource" name="playerSource" id="playerSource"
         value={this.state.value} onChange={this.ProfileChange}
-        placeholder=""/>
+        />
         <div>http://media.w3.org/2010/05/bunny/trailer.mp4</div>
 
         <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
@@ -108,7 +109,7 @@ class TrainerProfileForm extends Component {
         </div>
         <Counter countname="count" countvalue={this.state.value} onChangeCounter={this.counterChange}
          setname="set"  setvalue={this.state.value} />
-        
+        </div>
         <button type="submit">등록</button>
       </form>
     );

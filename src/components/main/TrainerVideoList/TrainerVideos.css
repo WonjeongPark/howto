@@ -1,0 +1,5 @@
+.videoSection {
+    border : 1px solid black;
+    max-height: 1000px;
+    overflow: scroll;
+}
