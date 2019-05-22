@@ -20,8 +20,8 @@ class TrainerVideo extends Component {
   render() {
     const style = {
       border: '1px solid black',
-      padding: '8px',
-      margin: '8px'
+      padding: '4px',
+      margin: '12px'
     };
     const {
       name, gym, count, set, bodypart, playerSource, id
@@ -41,7 +41,7 @@ class TrainerVideo extends Component {
                     <div>운동부위 : {bodypart}</div>
                     <div>권장운동량 : {count}회 {set}set</div>
                     
-                    <div >
+                    <div className="videoIcons">
                     <Icon className="icon" name="heart outline" size="large"/>
                     <Icon className="icon" name="comments outline" size="large"/>
                     <Icon className="icon" name="share square" size="large" />

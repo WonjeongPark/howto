@@ -18,7 +18,7 @@ class TrainerVideos extends Component {
        />)
     );
     return (
-      <div className="videoSection" >
+      <div className="videosSection" >
         {list}    
       </div>
     );
