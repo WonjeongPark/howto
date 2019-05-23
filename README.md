@@ -27,10 +27,8 @@
 반대로 트레이너입장의 수강생리스트는 수강생의 개인 프로필이기에<br>
 같은 색으로 구분하여 작성된 표입니다.<br><br>
 
-## 예상구조
+## [예상구조](https://docs.google.com/presentation/d/19S967ZQ7yASUOyzDys5l-D6k_L6AQt2WhODyO6SyT4M/edit?usp=sharing) (클릭)
 ### Main 
-
-[Main_Storyboard](https://docs.google.com/presentation/d/19S967ZQ7yASUOyzDys5l-D6k_L6AQt2WhODyO6SyT4M/edit?usp=sharing)
 
 [1차 수강생입장]<br>
 >NavBar- 로고, 홈페이지이름, Board 버튼 생성 // Profile, Sign In/Out 버튼 생성<br>
