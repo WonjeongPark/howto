@@ -3,7 +3,7 @@ const router = express.Router();
 
 const controller = require('./user.controller');
 
-// router.get('/', (req, res) => res.json(users));
+router.get('/', (req, res) => res.json({"hello": "world"}));
 router.get('/users', controller.index);
 
 // router.get('/:id', (req, res) => {
@@ -54,3 +54,5 @@ router.delete('/users/:id', controller.destroy);
 //   return res.status(201).json(newUser);
 // });
 router.post('/users', controller.create);
+
+module.exports = router;
