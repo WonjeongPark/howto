@@ -42,13 +42,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "node_modules/.bin/mocha api/users/user.spec.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "css-loader": "^2.1.1",
     "mocha": "^6.1.4",
     "redux-devtools-extension": "^2.13.2",
+    "should": "^13.2.3",
     "source-map-explorer": "^1.5.0",
     "style-loader": "^0.23.1",
     "xxxxx": "^1.0.3"
