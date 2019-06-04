@@ -52,6 +52,7 @@
     "should": "^13.2.3",
     "source-map-explorer": "^1.5.0",
     "style-loader": "^0.23.1",
+    "supertest": "^4.0.2",
     "xxxxx": "^1.0.3"
   }
 }
