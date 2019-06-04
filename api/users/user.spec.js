@@ -1,16 +1,24 @@
-const should = require('should');
+var should = require('should');
 const request = require('supertest');
 const app = require('../../app')
 
+
+// const should = require('should');
+// describe('GET /users', () => {
+//   it('should return 200 status code', () => {
+//     (true).should.be.equal(true)
+//   });
+
 describe('GET /users', () => {
     it('should return 200 status code', (done) => {
-        request(app)
-            .get('/users')
-            .expect(200)
-            .end((err, res) => {
-                if(err) throw err;
-                done();
-            })
+     
+      request(app)
+          .get('/users')
+          .expect(200)
+          .end((err, res) => {
+            if (err) throw err;
+            done();
+          })
     });
     it('should return array', (done) => {
         request(app)
