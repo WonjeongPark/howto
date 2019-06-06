@@ -8,12 +8,19 @@ app.use('/', require('./api/users/index'));
 
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
-//force 값이 false 일 경우에는 데이터베이스에 테이블이 있을 경우 다시 만들지 않는 기능
-//실제 운영중인 서버라면은 반드시 {force: false} 옵션으로 실행
-  require('./model').sequelize.sync({force:true})
-    .then(()=>{
-      console.log('Database sync')
+
+  const models = require('./models');
+  //개발모드에서는 false로 하거나 사용하지 않음.
+  models.sequelize.sync({force: true})
+    .then(() => {
+      console.log('✓ DB connection success.');
+      console.log('  Press CTRL-C to stop\n');
     })
+    .catch(err => {
+      console.error(err);
+      console.log('✗ DB connection error. Please make sure DB is running.');
+      process.exit();
+    });
 });
 
 

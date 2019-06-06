@@ -13,6 +13,10 @@ let users = [
     }
   ]
 
+  
+  const models = require('../../models');
+  
+
   exports.index = (req, res) => {
     res.json(users)
   };
@@ -61,3 +65,4 @@ let users = [
     users.push(newUser);
     return res.status(201).json(newUser);
   };
+
