@@ -18,7 +18,8 @@ let users = [
   
 
   exports.index = (req, res) => {
-    res.json(users)
+    models.User.findAll()
+      .then(users => res.json(users));
   };
   
   exports.show = (req, res) => {
@@ -27,12 +28,17 @@ let users = [
       return res.status(400).json({error: 'Incorrect id'});
     }
   
-    let user = users.filter(user => user.id === id)[0]
-    if (!user) {
-      return res.status(404).json({error: 'Unknown user'});
-    }
+    models.User.findOne({
+      where: {
+        id: id
+      }
+    }).then(user => {
+      if (!user) {
+        return res.status(404).json({error: 'No User'});
+      }
   
-    return res.json(user);
+      return res.json(user);
+    });
   };
   
   exports.destroy = (req, res) => {
@@ -40,14 +46,20 @@ let users = [
     if (!id) {
       return res.status(400).json({error: 'Incorrect id'});
     }
+
+    models.User.destroy({
+      where: {
+        id: id
+      }
+    }).then(() => res.status(204).send());
   
-    const userIdx = users.findIndex(user => user.id === id);
-    if (userIdx === -1) {
-      return res.status(404).json({error: 'Unknown user'});
-    }
+    // const userIdx = users.findIndex(user => user.id === id);
+    // if (userIdx === -1) {
+    //   return res.status(404).json({error: 'Unknown user'});
+    // }
   
-    users.splice(userIdx, 1);
-    res.status(204).send();
+    // users.splice(userIdx, 1);
+    // res.status(204).send();
   };
   
   exports.create = (req, res) => {
@@ -55,14 +67,23 @@ let users = [
     if (!name.length) {
       return res.status(400).json({error: 'Incorrenct name'});
     }
-    const id = users.reduce((maxId, user) => {
-      return user.id > maxId ? user.id : maxId
-    }, 0) + 1;
-    const newUser = {
-      id: id,
-      name: name
-    };
-    users.push(newUser);
-    return res.status(201).json(newUser);
-  };
 
+    models.User.create({
+      name: name
+      }).then((user) => res.status(201).json(user))
+    };
+
+  //   const id = users.reduce((maxId, user) => {
+  //     return user.id > maxId ? user.id : maxId
+  //   }, 0) + 1;
+  //   const newUser = {
+  //     id: id,
+  //     name: name
+  //   };
+  //   users.push(newUser);
+  //   return res.status(201).json(newUser);
+  // };
+
+  exports.update = (req, res) => {
+    res.send()
+  };
