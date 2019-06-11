@@ -3,13 +3,10 @@ const request = require('supertest');
 const app = require('../../app')
 
 
-// const should = require('should');
-// describe('GET /users', () => {
-//   it('should return 200 status code', () => {
-//     (true).should.be.equal(true)
-//   });
-
 describe('GET /users', () => {
+    // before('sync database', () => {
+    //   sync({force: true})
+    // });
     it('should return 200 status code', (done) => {
      
       request(app)
@@ -44,9 +41,10 @@ describe('GET /users', () => {
         .send({
           name:'foo'
         })
+        .expect(200)
         .end((err, res) => {
           if(err) throw err;
           done();
         })
     })
-  })
+  });
