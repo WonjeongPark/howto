@@ -25,9 +25,9 @@
       "integrity": "sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI="
     },
     "@types/node": {
-      "version": "12.0.4",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-12.0.4.tgz",
-      "integrity": "sha512-j8YL2C0fXq7IONwl/Ud5Kt0PeXw22zGERt+HSSnwbKOJVsAGkEz3sFCYwaF9IOuoG1HOtE0vKCj6sXF7Q0+Vaw=="
+      "version": "12.0.8",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-12.0.8.tgz",
+      "integrity": "sha512-b8bbUOTwzIY3V5vDTY1fIJ+ePKDUBqt2hC2woVGotdQQhG/2Sh62HOKHrT7ab+VerXAcPyAiTEipPu/FsreUtg=="
     },
     "abab": {
       "version": "1.0.4",
@@ -9955,9 +9955,9 @@
       "integrity": "sha512-PVadd+WaUDOAciICm/J1waJaSvgq+4rHE/K70j0PFqKhkTBsPv/82UGQJNXAngz1fOQLLxI6z1sEDmJDQhCTAA=="
     },
     "react-lazyload": {
-      "version": "2.5.0",
-      "resolved": "https://registry.npmjs.org/react-lazyload/-/react-lazyload-2.5.0.tgz",
-      "integrity": "sha512-RkEwpJDqEUVkXodxBXAI/UDyGYUBTZCU9kdG0Lwmg8BIv8zDvP+exFwUzc7wP4HX6n33CCsz+cjG2FpwdRoxpw=="
+      "version": "2.6.1",
+      "resolved": "https://registry.npmjs.org/react-lazyload/-/react-lazyload-2.6.1.tgz",
+      "integrity": "sha512-DLQ8R47t6cryyZ5D/qzKuJ3dXu4N8gUwxYlcmk17UvgwG+nVjj9Riq82vWMRC01OGAT9uMNY+md4Ucpn9PmRAg=="
     },
     "react-lifecycles-compat": {
       "version": "3.0.4",
@@ -10083,18 +10083,18 @@
       }
     },
     "react-redux-toastr": {
-      "version": "7.4.8",
-      "resolved": "https://registry.npmjs.org/react-redux-toastr/-/react-redux-toastr-7.4.8.tgz",
-      "integrity": "sha512-Z3TlOCMuNdBQgDlEfBYXq2SkecBv84eeWbCwwLchE+X6vKMS5FjJHgEf3g35rS5UCSSa/4v0ocoHoaj0Isw21A==",
+      "version": "7.5.1",
+      "resolved": "https://registry.npmjs.org/react-redux-toastr/-/react-redux-toastr-7.5.1.tgz",
+      "integrity": "sha512-1iD0Ci3SznIK+GHAAy0q331W5J9mA2EV7FO/63ajj+AaJjb9h6SAfTjMUxFcpOaEunicUuQjc72p8aEQ8B3qKA==",
       "requires": {
         "classnames": "^2.2.3",
         "eventemitter3": "^3.1.0"
       },
       "dependencies": {
         "eventemitter3": {
-          "version": "3.1.0",
-          "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.0.tgz",
-          "integrity": "sha512-ivIvhpq/Y0uSjcHDcOIccjmYjGLcP09MFGE7ysAwkAvkXfpZlC985pH2/ui64DKazbTW/4kN3yqozUxlXzI6cA=="
+          "version": "3.1.2",
+          "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.2.tgz",
+          "integrity": "sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q=="
         }
       }
     },
@@ -11161,9 +11161,9 @@
       "integrity": "sha1-1WgS4cAXpuTnw+Ojeh2m143TyT4="
     },
     "sequelize": {
-      "version": "5.8.7",
-      "resolved": "https://registry.npmjs.org/sequelize/-/sequelize-5.8.7.tgz",
-      "integrity": "sha512-1rubZM8fAyCt5ipyS+3HJ3Jbmb8WesLdPJ3jIbTD+78EbuPZILFEA5fK0mliVRBx7oM7oPULeVX0lxSRXBV1jw==",
+      "version": "5.8.9",
+      "resolved": "https://registry.npmjs.org/sequelize/-/sequelize-5.8.9.tgz",
+      "integrity": "sha512-7I1NcfXOxRpPypauLXeaZv97sxD94/1iWa0tVrCkXJtXVbctqFhhWSfF+UP6lEgcrDiKr4Ipa9zpW7w/mD6L5A==",
       "requires": {
         "bluebird": "^3.5.0",
         "cls-bluebird": "^2.1.0",
@@ -11175,7 +11175,7 @@
         "moment-timezone": "^0.5.21",
         "retry-as-promised": "^3.1.0",
         "semver": "^5.6.0",
-        "sequelize-pool": "^1.0.2",
+        "sequelize-pool": "^2.1.0",
         "toposort-class": "^1.0.1",
         "uuid": "^3.2.1",
         "validator": "^10.11.0",
@@ -11191,9 +11191,9 @@
           }
         },
         "ms": {
-          "version": "2.1.1",
-          "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.1.tgz",
-          "integrity": "sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg=="
+          "version": "2.1.2",
+          "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz",
+          "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
         },
         "semver": {
           "version": "5.7.0",
@@ -11203,19 +11203,9 @@
       }
     },
     "sequelize-pool": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/sequelize-pool/-/sequelize-pool-1.0.2.tgz",
-      "integrity": "sha512-VMKl/gCCdIvB1gFZ7p+oqLFEyZEz3oMMYjkKvfEC7GoO9bBcxmfOOU9RdkoltfXGgBZFigSChihRly2gKtsh2w==",
-      "requires": {
-        "bluebird": "^3.5.3"
-      },
-      "dependencies": {
-        "bluebird": {
-          "version": "3.5.5",
-          "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.5.5.tgz",
-          "integrity": "sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w=="
-        }
-      }
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/sequelize-pool/-/sequelize-pool-2.1.0.tgz",
+      "integrity": "sha512-NDy4qJPxm6+i7FEQqAsJPKVmKLOgorQJ5fYxrTNmvhb3QAbC5nAUxftiIOKQCyYXhWSgPBlDw7eJQozavmq45g=="
     },
     "serve-index": {
       "version": "1.9.1",
@@ -12806,9 +12796,9 @@
       }
     },
     "video-react": {
-      "version": "0.13.6",
-      "resolved": "https://registry.npmjs.org/video-react/-/video-react-0.13.6.tgz",
-      "integrity": "sha512-DyZxsK3xU5mxteF0A2SnS6BDXGv+dnBmibadJiqnjWFHShXkPpqUq5F//iSAlOARgk9kIu/GWiOdhVhPd6KJZg==",
+      "version": "0.13.7",
+      "resolved": "https://registry.npmjs.org/video-react/-/video-react-0.13.7.tgz",
+      "integrity": "sha512-wLmkEwKBR5a3roiZEV8l9NtOxTImIMSbbGaM7xMgI51UFUlS3+D+wCLHVv+YKaEfjPzUIwNnr9xB24+He6rSAA==",
       "requires": {
         "@babel/runtime": "^7.2.0",
         "classnames": "^2.2.6",
@@ -13380,9 +13370,9 @@
       "integrity": "sha1-VDjNLqk7IC76Ohn+iIeu58lPnJ0="
     },
     "wkx": {
-      "version": "0.4.6",
-      "resolved": "https://registry.npmjs.org/wkx/-/wkx-0.4.6.tgz",
-      "integrity": "sha512-LHxXlzRCYQXA9ZHgs8r7Gafh0gVOE8o3QmudM1PIkOdkXXjW7Thcl+gb2P2dRuKgW8cqkitCRZkkjtmWzpHi7A==",
+      "version": "0.4.7",
+      "resolved": "https://registry.npmjs.org/wkx/-/wkx-0.4.7.tgz",
+      "integrity": "sha512-pHf546L96TK8RradLt1cWaIffstgv/zXZ14CGz5KnBs1AxBX0wm+IDphjJw0qrEqRv8P9W9CdTt8Z1unMRZ19A==",
       "requires": {
         "@types/node": "*"
       }
