@@ -6,19 +6,20 @@ const syncDatabase = require('../../bin/sync-database')
 const models = require('../../models');
 
 
-  describe('GET /users', () => {
-    before('sync database', (done) => {
-      syncDatabase().then(() => done());
-    });
+describe('GET /users', () => {
+  before('sync database', (done) => {
+    syncDatabase().then(() => done());
+  });
 
-    const users = [
-      {name: 'alice'},
-      {name: 'bek'},
-      {name: 'chris'}
-    ];
-    before('insert 3 users into database', (done) => {
-      models.User.bulkCreate(users).then(() => done());
-    });
+  const users = [
+    {name: 'alice'},
+    {name: 'bek'},
+    {name: 'chris'}
+  ];
+  before('insert 3 users into database', (done) => {
+    models.User.bulkCreate(users).then(() => done());
+  });
+
       it('should return 200 status code', (done) => {
         request(app)
             .get('/users')

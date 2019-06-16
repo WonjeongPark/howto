@@ -9,7 +9,7 @@ class TrainerVideos extends Component {
       }
 
     render() {
-    const { data} = this.props;
+    const {data} = this.props;
     const list = data.map(
       info => (
       <TrainerVideo

@@ -18,7 +18,7 @@ class ProfileDashboard extends Component {
         bodypart:'목',
         playerSource:'http://media.w3.org/2010/05/sintel/trailer.mp4',
         count:'10',
-        set:'3',
+        set:'3'
         
       },
       {
