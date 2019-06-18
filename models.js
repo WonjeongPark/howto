@@ -27,8 +27,16 @@ const sequelize = new Sequelize(
         },
         })
 
-const User = sequelize.define('user', {
-    name:Sequelize.STRING
+const User = sequelize.define('users', {
+    name:Sequelize.STRING,
+    gym:Sequelize.STRING,
+    gender:Sequelize.STRING,
+    career:Sequelize.STRING,
+    dates:Sequelize.DATE,
+    bodypart:Sequelize.STRING,
+    playerSource:Sequelize.STRING,
+    count:Sequelize.INTEGER,
+    setNum:Sequelize.INTEGER
 });
 
 module.exports = {
