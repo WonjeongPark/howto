@@ -13,7 +13,7 @@ class TrainerVideo extends Component {
       bodypart:'',
       playerSource: '',
       count: '',
-      set:'',
+      setNum:'',
       id: 0
     } 
   }
@@ -24,7 +24,7 @@ class TrainerVideo extends Component {
       margin: '12px'
     };
     const {
-      name, gym, count, set, bodypart, playerSource
+      name, gym, count, setNum, bodypart, playerSource
     } = this.props.info;
     return (
       <Grid className="trainervideo" style={style}>
@@ -39,7 +39,7 @@ class TrainerVideo extends Component {
                     <div>Name : {name}</div>
                     <div>Gym : {gym}</div>
                     <div>운동부위 : {bodypart}</div>
-                    <div>권장운동량 : {count}회 {set}set</div>
+                    <div>권장운동량 : {count}회 {setNum}set</div>
                     
                     <div className="videoIcons">
                     <Icon className="icon" name="heart outline" size="large"/>

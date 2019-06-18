@@ -40,7 +40,7 @@ class TrainerProfile extends Component {
           };
         
         const dates = [...this.props.info.dates];
-        // console.log(dates);
+        console.log(dates);
         const datesformat = dates.toLocaleString("ko-KR",
         { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
         // 문자열? Date?

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 export const Counter=({onChangeCounter, countvalue, countname, setname, setvalue})=>{
       
     const [count, setCount] = useState(10);
-    const [set, setSet] = useState(3);
+    const [setNum, setSet] = useState(3);
     
     function increCount(){
       setCount(count + 1)
@@ -18,13 +18,13 @@ export const Counter=({onChangeCounter, countvalue, countname, setname, setvalue
     }
 
     function increSet(){
-      setSet(set + 1)
-      setvalue = set
+      setSet(setNum + 1)
+      setvalue = setNum
       onChangeCounter(setname, setvalue +1)
     };
     function decreSet(){
-      setSet(set - 1)
-      setvalue = set
+      setSet(setNum - 1)
+      setvalue = setNum
       onChangeCounter(setname, setvalue -1)
     }
 
@@ -51,11 +51,11 @@ export const Counter=({onChangeCounter, countvalue, countname, setname, setvalue
 
  
          <input
-         type="text" name="set" value={set}
+         type="text" name="set" value={setNum}
          onChange={event => inputSet(event)}
        /> set 반복
-        <button type="button" setname="set" value={set} onClick={() => increSet()}>+1</button>
-        <button type="button" setname="set" value={set} onClick={() => decreSet()}>-1</button>
+        <button type="button" setname="set" value={setNum} onClick={() => increSet()}>+1</button>
+        <button type="button" setname="set" value={setNum} onClick={() => decreSet()}>-1</button>
         </div>)
         }
  
