@@ -39,11 +39,11 @@
     "revalidate": "^1.2.0",
     "semantic-ui-css": "2.2.14",
     "semantic-ui-react": "^0.79.0",
-    "sequelize": "^5.8.9",
-    "video-react": "^0.13.7"
+    "sequelize": "^5.8.10",
+    "video-react": "^0.13.9"
   },
   "scripts": {
-    "start": "node bin/www",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "./node_modules/.bin/mocha api/**/*.spec.js",
     "eject": "react-scripts eject"

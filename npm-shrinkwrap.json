@@ -11161,9 +11161,9 @@
       "integrity": "sha1-1WgS4cAXpuTnw+Ojeh2m143TyT4="
     },
     "sequelize": {
-      "version": "5.8.9",
-      "resolved": "https://registry.npmjs.org/sequelize/-/sequelize-5.8.9.tgz",
-      "integrity": "sha512-7I1NcfXOxRpPypauLXeaZv97sxD94/1iWa0tVrCkXJtXVbctqFhhWSfF+UP6lEgcrDiKr4Ipa9zpW7w/mD6L5A==",
+      "version": "5.8.10",
+      "resolved": "https://registry.npmjs.org/sequelize/-/sequelize-5.8.10.tgz",
+      "integrity": "sha512-EUQh/Tv/66WTOsVwN+GxB/5HIa0tHzf9Of8nQmjVTw7hG0nXSbZLOsHP+mbhDJp6Y68y0GsynNAKy8Y/c1uLhA==",
       "requires": {
         "bluebird": "^3.5.0",
         "cls-bluebird": "^2.1.0",
@@ -12796,17 +12796,25 @@
       }
     },
     "video-react": {
-      "version": "0.13.7",
-      "resolved": "https://registry.npmjs.org/video-react/-/video-react-0.13.7.tgz",
-      "integrity": "sha512-wLmkEwKBR5a3roiZEV8l9NtOxTImIMSbbGaM7xMgI51UFUlS3+D+wCLHVv+YKaEfjPzUIwNnr9xB24+He6rSAA==",
+      "version": "0.13.9",
+      "resolved": "https://registry.npmjs.org/video-react/-/video-react-0.13.9.tgz",
+      "integrity": "sha512-nT8WjOGr3va7zJDR+OfpyqFpMrpMX3LfY3PuVyrt9ZdKDzlHgv9gQc/saAFb/pvImatzOs3+XA2GWrb5hXbTkg==",
       "requires": {
-        "@babel/runtime": "^7.2.0",
+        "@babel/runtime": "^7.4.5",
         "classnames": "^2.2.6",
         "lodash.throttle": "^4.1.1",
-        "prop-types": "^15.6.2",
+        "prop-types": "^15.7.2",
         "redux": "^4.0.1"
       },
       "dependencies": {
+        "@babel/runtime": {
+          "version": "7.4.5",
+          "resolved": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.4.5.tgz",
+          "integrity": "sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==",
+          "requires": {
+            "regenerator-runtime": "^0.13.2"
+          }
+        },
         "loose-envify": {
           "version": "1.4.0",
           "resolved": "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz",
@@ -12833,6 +12841,11 @@
             "loose-envify": "^1.4.0",
             "symbol-observable": "^1.2.0"
           }
+        },
+        "regenerator-runtime": {
+          "version": "0.13.2",
+          "resolved": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.2.tgz",
+          "integrity": "sha512-S/TQAZJO+D3m9xeN1WTI8dLKBBiRgXBlTJvbWjCThHWZj9EvHK70Ff50/tYj2J/fvBY6JtFVwRuazHN2E7M9BA=="
         }
       }
     },

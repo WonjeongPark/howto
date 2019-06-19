@@ -1,14 +1,21 @@
 const express = require('express');
 var bodyParser = require('body-parser')
 const app = express();
+// const path = require('path')
 
 // process.env.NODE_ENV = 'test'
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// app.get('*', function (request, response){
+//     response.sendFile(path.resolve(__dirname, 'src', 'index.js'))
+//   })
+
+app.get('/src/index.js', (req,res) => {
+    console.log('howto howto')
+} ) 
 app.use('/', require('./api/users/index'));
-  
 // app.listen(3000, () => {
 //   console.log('Example app listening on port 3000!');
 
