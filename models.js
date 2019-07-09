@@ -1,15 +1,5 @@
 const Sequelize = require('sequelize');
-// const sequelize = new Sequelize('ex_nodejs_db', 'root', 'howto@@', {
-// host: 'localhost',
-// dialect: 'mysql',
 
-// pool: {
-// max: 5,
-// min: 0,
-// acquire: 30000,
-// idle: 10000
-// },
-// });
 const config = require('./config/environments');
 
 const sequelize = new Sequelize(
@@ -28,6 +18,12 @@ const sequelize = new Sequelize(
         })
 
 const User = sequelize.define('users', {
+    id:{
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+    },
     name:Sequelize.STRING,
     gym:Sequelize.STRING,
     gender:Sequelize.STRING,
