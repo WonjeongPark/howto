@@ -1,4 +1,4 @@
-// const path = require('path');
+const path = require('path');
 
 // module.exports = {
 //   // enntry file
@@ -40,7 +40,7 @@ module.exports = {
   mode:'development',
   entry:'./src/index.js',
   output:{
-    path: __dirname + '/dist',
+    path: __dirname + '/dist/js',
     filename: 'bundle.[hash].js'
   },
   module:{

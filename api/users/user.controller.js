@@ -80,8 +80,8 @@
     if (!count.length) {
       return res.status(400).json({error: 'Incorrenct count'});
     }
-    const set = req.body.set || '';
-    if (!set.length) {
+    const setNum = req.body.setNum || '';
+    if (!setNum.length) {
       return res.status(400).json({error: 'Incorrenct set'});
     }
     
@@ -95,7 +95,7 @@
       bodypart : bodypart,
       playerSource : playerSource,
       count : count,
-      set : set
+      setNum : setNum
       }).then((user) => res.status(201).json(user))
     };
 
