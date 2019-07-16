@@ -1,6 +1,6 @@
 {
   "name": "howto3",
-  "version": "1.0.0",
+  "version": "latest",
   "description": "community between Personal trainer & trainee",
   "main": "index.js",
   "scripts": {
