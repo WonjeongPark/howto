@@ -18,12 +18,11 @@ const sequelize = new Sequelize(
         })
 
 const User = sequelize.define('users', {
-    id:{
-        allowNull: false,
-        autoIncrement: true,
+    id: {
+        type: Sequelize.INTEGER,
         primaryKey: true,
-        type: Sequelize.INTEGER
-    },
+        autoIncrement: true
+      },
     name:Sequelize.STRING,
     gym:Sequelize.STRING,
     gender:Sequelize.STRING,

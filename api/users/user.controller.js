@@ -1,10 +1,9 @@
-  
-  const models = require('../../models');
+const models = require('../../models');
   
 
   exports.index = (req, res) => {
     models.User.findAll()
-      .then(users => res.json(users));
+      .then(users => res.send(users));
   };
   
   exports.show = (req, res) => {
@@ -80,8 +79,8 @@
     if (!count.length) {
       return res.status(400).json({error: 'Incorrenct count'});
     }
-    const setNum = req.body.setNum || '';
-    if (!setNum.length) {
+    const set = req.body.set || '';
+    if (!set.length) {
       return res.status(400).json({error: 'Incorrenct set'});
     }
     
@@ -95,20 +94,12 @@
       bodypart : bodypart,
       playerSource : playerSource,
       count : count,
-      setNum : setNum
+      set : set,
+      createdAt : new Date(),
+      updatedAt : new Date()
       }).then((user) => res.status(201).json(user))
     };
 
-  //   const id = users.reduce((maxId, user) => {
-  //     return user.id > maxId ? user.id : maxId
-  //   }, 0) + 1;
-  //   const newUser = {
-  //     id: id,
-  //     name: name
-  //   };
-  //   users.push(newUser);
-  //   return res.status(201).json(newUser);
-  // };
 
   exports.update = (req, res) => {
     res.send()
