@@ -42,7 +42,7 @@ state = {
   render() {
     const users = this.state;
     console.log(users)
-    const datas = JSON.stringify(users[0][0])
+    const datas = JSON.stringify(users)
     // const datas = users
     return (
       <div className="App">
