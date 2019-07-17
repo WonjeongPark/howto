@@ -4,8 +4,6 @@ import './App.css';
 
 class App extends Component {
 state = {
-    users: [
-      {
         id:'',
         name: '',
         gym: '',
@@ -16,15 +14,13 @@ state = {
         playerSource:'',
         count:'',
         set:''
-      }
-
-    ]
   };
 
   componentDidMount() {
       // Call our fetch function below once the component mounts
     this.callBackendAPI()
-      .then(res => this.setState({ users : [...res] }))
+      // .then(res => this.setState({ dates: [...res[0].dates] }))
+      .then(res => this.setState({ name : res[0].name }))
       .catch(err => console.log(err));
   }
     // Fetches our GET route from the Express server. 
@@ -32,7 +28,7 @@ state = {
   callBackendAPI = async () => {
     const response = await fetch('/users');
     const body = await response.json();
-    console.log(body)
+    // console.log(body)
     if (response.status !== 200) {
       throw Error(body.message) 
     }
@@ -40,9 +36,17 @@ state = {
   };
 
   render() {
-    const users = this.state;
-    console.log(users)
-    const datas = JSON.stringify(users)
+    console.log(this.state.dates)
+    const dates = (this.state.dates).toString().replace(/,/g, '');
+    console.log(dates)
+    // const datesformat = Date.parse(dates)
+    // .toLocaleString("ko-KR",
+    // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    // console.log(datesformat)
+
+    // const users = this.state;
+    console.log(this.state)
+    // const datas = JSON.stringify(users)
     // const datas = users
     return (
       <div className="App">
@@ -51,8 +55,9 @@ state = {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-        {/* {console.log(datas)} */}
-        {datas}</p>
+        {this.state.name}
+        </p>
+        <p>{dates}</p>
       </div>
     );
   }
