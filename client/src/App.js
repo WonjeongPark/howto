@@ -49,8 +49,8 @@ state = {
     // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     // console.log(datesformat)
 
-  
-    console.log(this.state.users[0])
+    console.log(this.state.users[0]) 
+    console.log(this.state.users[1])
     // console.log(this.state.users[1].count)
     // 0은 되고 1은 안되는 이유는 무엇인가!!!!
     
