@@ -1,0 +1,36 @@
+.trainerprofile{
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.trainerprofile-left, .trainerprofile-left img  {
+    width : 150px;
+    height: 150px;
+    align-items: center;
+}
+
+.trainerprofile-right, 
+.trainerprofile-right Button{
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 30px;
+}
+.trainerprofile-right .delete {
+    margin: 0px;
+    cursor: pointer;
+    float : right;
+}
+
+
+.popup .popup_inner{
+    max-height: 70px;
+    overflow: scroll;
+    font-size : 15px;
+}
+
+.popupTime {
+    list-style: none;
+    font-size : 15px;
+    line-height: 20px;
+}

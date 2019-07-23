@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
-import TrainerProfiles from '../TrainerProfileList/TrainerProfiles'
-import TrainerVideos from '../TrainerVideoList/TrainerVideos'
-import TrainerProfileForm from '../../TrainerProfileFrom/TrainerProfileForm'
+import TrainerProfileList from '../TrainerProfileList/TrainerProfileList'
+// import TrainerVideos from '../TrainerVideoList/TrainerVideos'
+import TrainerProfileForm from '../../TrainerProfileFrom/TrainerProfileFrom'
 
 class ProfileDashboard extends Component {
   id = 5
@@ -47,10 +47,10 @@ class ProfileDashboard extends Component {
             <Grid.Column width={7}>
             <TrainerProfileForm
             onCreate={this.profileCreate}/>
-            <TrainerProfiles data={users} onRemove={this.profileRemove}/>
+            <TrainerProfileList data={users} onRemove={this.profileRemove}/>
             </Grid.Column>
             <Grid.Column width={9}>
-            <TrainerVideos data={users}/>
+            {/* <TrainerVideos data={users}/> */}
             </Grid.Column>
       </Grid>
     )
