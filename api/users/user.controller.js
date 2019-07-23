@@ -79,9 +79,9 @@ const models = require('../../models');
     if (!count.length) {
       return res.status(400).json({error: 'Incorrenct count'});
     }
-    const set = req.body.set || '';
-    if (!set.length) {
-      return res.status(400).json({error: 'Incorrenct set'});
+    const setNum = req.body.setNum || '';
+    if (!setNum.length) {
+      return res.status(400).json({error: 'Incorrenct setNum'});
     }
     
 
@@ -94,7 +94,7 @@ const models = require('../../models');
       bodypart : bodypart,
       playerSource : playerSource,
       count : count,
-      set : set,
+      setNum : setNum,
       createdAt : new Date(),
       updatedAt : new Date()
       }).then((user) => res.status(201).json(user))

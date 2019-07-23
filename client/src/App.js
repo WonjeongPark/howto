@@ -4,23 +4,29 @@ import './App.css';
 
 class App extends Component {
 state = {
+  users : [{
         id:'',
         name: '',
         gym: '',
         gender: '',
         career:'',
-        dates:[],
+        dates:'',
         bodypart:'',
         playerSource:'',
-        count:'',
-        set:''
-  };
+        count:0,
+        setNum:0
+  }]
+};
 
   componentDidMount() {
       // Call our fetch function below once the component mounts
+      // const {users} = this.state;
     this.callBackendAPI()
       // .then(res => this.setState({ dates: [...res[0].dates] }))
-      .then(res => this.setState({ name : res[0].name }))
+      .then(res => this.setState( 
+        {users : res}
+        // {users: ({ id: this.id++, ...res })}
+        ))
       .catch(err => console.log(err));
   }
     // Fetches our GET route from the Express server. 
@@ -36,17 +42,22 @@ state = {
   };
 
   render() {
-    console.log(this.state.dates)
-    const dates = (this.state.dates).toString().replace(/,/g, '');
-    console.log(dates)
+    // const dates = (this.state.dates).toString().replace(/,/g, '');
+    // console.log(dates)
     // const datesformat = Date.parse(dates)
     // .toLocaleString("ko-KR",
     // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     // console.log(datesformat)
 
-    // const users = this.state;
-    console.log(this.state)
-    // const datas = JSON.stringify(users)
+  
+    console.log(this.state.users[0])
+    // console.log(this.state.users[1].count)
+    // 0은 되고 1은 안되는 이유는 무엇인가!!!!
+    
+    // const dates = (this.state.users.dates).replace(/,/g, '');
+    // console.log(dates)
+    const datas = JSON.stringify(this.state.users)
+    console.log(datas)
     // const datas = users
     return (
       <div className="App">
@@ -55,9 +66,9 @@ state = {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-        {this.state.name}
+        {datas}
         </p>
-        <p>{dates}</p>
+        <p></p>
       </div>
     );
   }
