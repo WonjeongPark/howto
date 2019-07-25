@@ -5,7 +5,7 @@ import logo from '../../logo.svg'
 class NavBar extends Component {
   render() {
     return (
-            <Menu inverted fixed="top">
+            <Menu inverted>
               <Container>
                 <Menu.Item header>
                   <img src={logo} alt="logo" />

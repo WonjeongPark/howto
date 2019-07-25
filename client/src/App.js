@@ -10,7 +10,7 @@ state = {
         gym: '',
         gender: '',
         career:'',
-        dates:'',
+        dates:[],
         bodypart:'',
         playerSource:'',
         count:0,
@@ -48,15 +48,15 @@ state = {
     // .toLocaleString("ko-KR",
     // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     // console.log(datesformat)
-
-    // console.log(this.state.users[0]) 
-    // console.log(this.state.users[1])
-    // console.log(this.state.users[1].count)
+    console.log(this.state.users)
+    console.log(this.state.users[0]) 
+    console.log(this.state.users[1])
+    console.log(this.state.users[0].bodypart)
     // 0은 되고 1은 안되는 이유는 무엇인가!!!!
     
     // const dates = (this.state.users.dates).replace(/,/g, '');
     // console.log(dates)
-    const datas = JSON.stringify(this.state.users[0].name)
+    const datas = JSON.stringify(this.state.users)
     console.log(datas)
     // const datas = users
     return (
