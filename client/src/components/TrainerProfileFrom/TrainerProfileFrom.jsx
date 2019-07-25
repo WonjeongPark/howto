@@ -91,6 +91,7 @@ class TrainerProfileForm extends Component {
             <option value="5년이상">5년~</option>
         </select>
         <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
+        
         <div>
         동영상URL : 
         <input ref="playerSource" name="playerSource" id="playerSource"
