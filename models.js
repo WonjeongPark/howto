@@ -27,12 +27,27 @@ const User = sequelize.define('users', {
     gym:Sequelize.STRING,
     gender:Sequelize.STRING,
     career:Sequelize.STRING,
-    dates:Sequelize.DATE,
+    // dates:Sequelize.DATETIME,
     bodypart:Sequelize.STRING,
     playerSource:Sequelize.STRING,
     count:Sequelize.INTEGER,
     setNum:Sequelize.INTEGER
+}, { 
+    // sequelize, modelName: 'user',
+    // underscored: true
 });
+
+const Dates = sequelize.define('Dates', {
+    users_id: {
+        type: Sequelize.INTEGER,
+        references: {
+            model: User,
+            key: 'id'
+          }},
+    dates:Sequelize.DATE,
+    
+});
+User.hasMany(Dates, {foreignKey: 'users_id'});
 
 module.exports = {
     sequelize: sequelize,

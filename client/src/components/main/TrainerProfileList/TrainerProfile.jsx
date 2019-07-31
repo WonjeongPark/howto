@@ -5,8 +5,8 @@ import './TrainerProfile.css';
 class TrainerProfile extends Component {
     static defaultProps = {
         info: {
-          name: '이름',
-          gym: '헬스장',
+          name: '',
+          gym: '',
           gender:'',
           career:'',
           dates:[],
@@ -39,10 +39,10 @@ class TrainerProfile extends Component {
             margin: '8px'
           };
         
-        const dates = [...this.props.info.dates];
-        console.log(dates);
-        const datesformat = dates.toLocaleString("ko-KR",
-        { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
+        // const dates = [...this.props.info.dates];
+        // console.log(dates);
+        // const datesformat = dates.toLocaleString("ko-KR",
+        // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
         // 문자열? Date?
         const {
             name, gym, gender, career,  id
@@ -61,7 +61,9 @@ class TrainerProfile extends Component {
                     <div>경력 :  {career}</div>
                     <button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</button>
                     {this.state.showPopup ? 
-                        <Popup  text={datesformat} closePopup={this.togglePopup.bind(this)}
+                        <Popup  
+                        // text={datesformat}
+                         closePopup={this.togglePopup.bind(this)}
                         />
                         : null
                     }

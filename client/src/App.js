@@ -4,18 +4,7 @@ import './App.css';
 
 class App extends Component {
 state = {
-  users : [{
-        id:'',
-        name: '',
-        gym: '',
-        gender: '',
-        career:'',
-        dates:[],
-        bodypart:'',
-        playerSource:'',
-        count:0,
-        setNum:0
-  }]
+  users : []
 };
 
   componentDidMount() {
@@ -23,10 +12,12 @@ state = {
       // const {users} = this.state;
     this.callBackendAPI()
       // .then(res => this.setState({ dates: [...res[0].dates] }))
-      .then(res => this.setState( 
+      .then(res => {console.log(res);
+        this.setState( 
         {users : res}
+
         // {users: ({ id: this.id++, ...res })}
-        ))
+      )} )
       .catch(err => console.log(err));
   }
     // Fetches our GET route from the Express server. 
@@ -48,11 +39,22 @@ state = {
     // .toLocaleString("ko-KR",
     // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     // console.log(datesformat)
-    console.log(this.state.users)
+    if(this.state.users.length !== 0){
+    console.log(this.state.users )
     console.log(this.state.users[0]) 
     console.log(this.state.users[1])
-    console.log(this.state.users[0].bodypart)
+    console.log(this.state.users[0].name)
+    console.log(this.state.users[1].name)
+  }
     // 0은 되고 1은 안되는 이유는 무엇인가!!!!
+    // Lifecycle API 와 관련된 이슈
+    // componentDidMount 전후로 console.log(users[1].name)이 실행되므로
+    // State= {users:[{
+    //  name:'', gender:''
+    // ...
+   // }]} 의 경우 위에 담기는 users[0].name은 불러올 수 있지만
+   //componentDidMount 전에 users[1].name은 존재하지 않으므로 오류가 난 것.
+   //if 문으로 해결
     
     // const dates = (this.state.users.dates).replace(/,/g, '');
     // console.log(dates)
