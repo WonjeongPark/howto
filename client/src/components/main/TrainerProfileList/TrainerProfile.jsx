@@ -31,7 +31,7 @@ class TrainerProfile extends Component {
         const {info, onRemove} = this.props;
         onRemove(info.id);
     }
-
+    
     render() {
         const style = {
             border: '1px solid black',

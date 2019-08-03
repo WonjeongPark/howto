@@ -1,26 +1,31 @@
-const models = require('../../models');
+const models = require('../../models/models');
+// const dates = require('../../models/dates.js')
   
 
-  exports.index = (req, res) => {
+  exports.index = (req, res, next) => {
     models.User.findAll(
-    //   {
-    //   where: {users_id : users.id},
-    //   include: [{model: models.dates}]
-    // }
-    ).then(
+      { 
+        include : {model: models.dates},
+        
+      }
+      ).then(
         users => res.send(users))
   };
   // dates 연결하는 법 다시 구상
   // dates를 users에 넣어서 한번에? 아니면 따로따로불러서 따로따로보이게?
   // exports.dates = (req, res) => {
-  //   models.User.find(
+  //   models.dates.findAll(
   //           {
-  //       where: {users_id : users.id},
-  //       include: {model: models.dates}
+  //       where: {users_id : id}
   //     }
-  //   ).then(function(result) {
-  //     res.json(result);
+  //   ).then( result => {
+  //     res.render("show", {
+  //       posts: result
+  //     });
   //   })
+  //   .catch(function(err){
+  //     console.log(err);
+  //   });
   // }
 
   exports.show = (req, res) => {
@@ -64,42 +69,42 @@ const models = require('../../models');
   };
   
   exports.create = (req, res) => {
-    const name = req.body.name || '';
-    if (!name.length) {
-      return res.status(400).json({error: 'Incorrenct name'});
-    }
-    const gym = req.body.gym || '';
-    if (!gym.length) {
-      return res.status(400).json({error: 'Incorrenct gym'});
-    }
-    const gender = req.body.gender || '';
-    if (!gender.length) {
-      return res.status(400).json({error: 'Incorrenct gender'});
-    }
-    const career = req.body.career || '';
-    if (!career.length) {
-      return res.status(400).json({error: 'Incorrenct career'});
-    }
-    const dates = req.body.dates || '';
-    if (!dates.length) {
-      return res.status(400).json({error: 'Incorrenct dates'});
-    }
-    const bodypart = req.body.bodypart || '';
-    if (!bodypart.length) {
-      return res.status(400).json({error: 'Incorrenct bodypart'});
-    }
-    const playerSource = req.body.playerSource || '';
-    if (!playerSource.length) {
-      return res.status(400).json({error: 'Incorrenct playerSource'});
-    }
-    const count = req.body.count || '';
-    if (!count.length) {
-      return res.status(400).json({error: 'Incorrenct count'});
-    }
-    const setNum = req.body.setNum || '';
-    if (!setNum.length) {
-      return res.status(400).json({error: 'Incorrenct setNum'});
-    }
+    // const name = req.body.name || '';
+    // if (!name.length) {
+    //   return res.status(400).json({error: 'Incorrenct name'});
+    // }
+    // const gym = req.body.gym || '';
+    // if (!gym.length) {
+    //   return res.status(400).json({error: 'Incorrenct gym'});
+    // }
+    // const gender = req.body.gender || '';
+    // if (!gender.length) {
+    //   return res.status(400).json({error: 'Incorrenct gender'});
+    // }
+    // const career = req.body.career || '';
+    // if (!career.length) {
+    //   return res.status(400).json({error: 'Incorrenct career'});
+    // }
+    // const dates = req.body.dates || '';
+    // if (!dates.length) {
+    //   return res.status(400).json({error: 'Incorrenct dates'});
+    // }
+    // const bodypart = req.body.bodypart || '';
+    // if (!bodypart.length) {
+    //   return res.status(400).json({error: 'Incorrenct bodypart'});
+    // }
+    // const playerSource = req.body.playerSource || '';
+    // if (!playerSource.length) {
+    //   return res.status(400).json({error: 'Incorrenct playerSource'});
+    // }
+    // const count = req.body.count || '';
+    // if (!count.length) {
+    //   return res.status(400).json({error: 'Incorrenct count'});
+    // }
+    // const setNum = req.body.setNum || '';
+    // if (!setNum.length) {
+    //   return res.status(400).json({error: 'Incorrenct setNum'});
+    // }
     
 
     models.User.create({
@@ -107,15 +112,25 @@ const models = require('../../models');
       gym : gym,
       gender : gender,
       career : career,
-      dates : dates,
       bodypart : bodypart,
       playerSource : playerSource,
       count : count,
       setNum : setNum,
       createdAt : new Date(),
       updatedAt : new Date()
-      }).then((user) => res.status(201).json(user))
-    };
+      })
+      .then((user) => {res.status(201).json(user)
+        // res.redirect("/users")
+    })
+      .catch( err => {
+        console.log("데이터 추가 실패");
+      }) 
+    // models.dates.Create({
+    //   users_id : id,
+    //   dates : dates
+    // 배열 dates -> 각각 id, dates로 저장하는 법 찾기
+    // })
+  };
 
 
   exports.update = (req, res) => {

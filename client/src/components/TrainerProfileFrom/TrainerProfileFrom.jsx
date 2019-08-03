@@ -14,7 +14,7 @@ class TrainerProfileForm extends Component {
     bodypart: '',
     playerSource: '',
     count: '',
-    set:''
+    setNum:''
   }
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.state.playerSource !== prevState.playerSource) {
@@ -28,7 +28,7 @@ class TrainerProfileForm extends Component {
     });
   }
   counterChange = (countername, counter) => {
-    console.log(countername, counter)
+    // console.log(countername, counter)
     this.setState({
       [countername]: counter
     });
@@ -41,26 +41,37 @@ class TrainerProfileForm extends Component {
 
   profileSubmit = (e) => {
     e.preventDefault();
-    this.props.onCreate(this.state);
-    this.setState({
-      name: '',
-      gym: '',
-      gender: '',
-      career:'',
-      dates: [],
-      bodypart: '',
-      videoUrl:'',
-      count:'',
-      set:''
-    })
-    console.log(this.state);
+      var data = 
+          { name: this.state.name,
+          gym: this.state.gym,
+          gender: this.state.gender,
+          career:this.state.career,
+          // dates: this.state.dates,
+          bodypart: this.state.bodypart,
+          playerSource:this.state.playerSource,
+          count:this.state.count,
+          setNum:this.state.setNum } 
+      
+      console.log(data)
+      fetch("/users", {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+      }).then(function(response) {
+          if (response.status >= 400) {
+            throw new Error("Bad response from server");
+          }
+          return response.json();
+      }).then(function(data) {
+          console.log(data)    
+          if(data === "success"){
+            this.setState({msg: "Thanks for registering"});  
+          }
+      }).catch(function(err) {
+          console.log(err)
+      });
   }
-  // updatePlayerInfo() {
-  //   this.setState({
-  //     playerSource: this.state.inputVideoUrl
-  //   });
-  // }
-
+  
   render() {
     return (
       <form onSubmit={this.profileSubmit}>
@@ -109,7 +120,7 @@ class TrainerProfileForm extends Component {
         <input type="radio" name="bodypart" value="종아리"/>종아리
         </div>
         <Counter countname="count" countvalue={this.state.value} onChangeCounter={this.counterChange}
-         setname="set"  setvalue={this.state.value} />
+         setname="setNum"  setvalue={this.state.value} />
         </div>
         <button type="submit">등록</button>
       </form>

@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 
-const config = require('./config/environments');
+const config = require('../config/environments');
+
 
 const sequelize = new Sequelize(
     config.mysql.database,
@@ -27,7 +28,6 @@ const User = sequelize.define('users', {
     gym:Sequelize.STRING,
     gender:Sequelize.STRING,
     career:Sequelize.STRING,
-    // dates:Sequelize.DATETIME,
     bodypart:Sequelize.STRING,
     playerSource:Sequelize.STRING,
     count:Sequelize.INTEGER,
@@ -37,20 +37,32 @@ const User = sequelize.define('users', {
     // underscored: true
 });
 
-const Dates = sequelize.define('Dates', {
+const dates = sequelize.define('dates', {
     users_id: {
         type: Sequelize.INTEGER,
         references: {
             model: User,
-            key: 'id'
+            key: `id`
           }},
     dates:Sequelize.DATE,
+},{
+    timestamps : false,
     
 });
-User.hasMany(Dates, {foreignKey: 'users_id'});
+User.hasMany(dates, {foreignKey: 'users_id', sourceKey: 'id'});
+dates.belongsTo(User, {foreignKey: 'users_id', targetKey: 'id'})
+
+// User.associate = (models) => {
+//     User.hasMany(models.dates);
+//   };
+
+// dates.associate = (models) => {
+//     dates.belongsTo(models.User);
+// };
 
 module.exports = {
     sequelize: sequelize,
-    User : User
+    User : User,
+    dates : dates
 }
 
