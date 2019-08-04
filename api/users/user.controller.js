@@ -1,32 +1,18 @@
 const models = require('../../models/models');
-// const dates = require('../../models/dates.js')
+
   
 
   exports.index = (req, res, next) => {
     models.User.findAll(
       { 
-        include : {model: models.dates},
-        
+        include : [
+          {model: models.dates,
+          attributes : ['dates']}]
       }
       ).then(
         users => res.send(users))
   };
-  // dates 연결하는 법 다시 구상
-  // dates를 users에 넣어서 한번에? 아니면 따로따로불러서 따로따로보이게?
-  // exports.dates = (req, res) => {
-  //   models.dates.findAll(
-  //           {
-  //       where: {users_id : id}
-  //     }
-  //   ).then( result => {
-  //     res.render("show", {
-  //       posts: result
-  //     });
-  //   })
-  //   .catch(function(err){
-  //     console.log(err);
-  //   });
-  // }
+
 
   exports.show = (req, res) => {
     const id = parseInt(req.params.id, 10);

@@ -39,8 +39,17 @@ class TrainerProfile extends Component {
             margin: '8px'
           };
         
-        // const dates = [...this.props.info.dates];
-        // console.log(dates);
+        const dates = this.props.info.dates;
+        console.log(dates);
+        // for(var i=0; i<dates.length; i++){
+          const datesformat = dates.map(dates => new Date(dates.dates)
+          .toLocaleString("ko-KR",
+          { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })
+          // .replace(/,/g, '\n');
+          )
+          console.log(datesformat)
+        // }
+        // console.log(datesformat)
         // const datesformat = dates.toLocaleString("ko-KR",
         // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
         // 문자열? Date?
@@ -62,7 +71,7 @@ class TrainerProfile extends Component {
                     <button onClick={this.togglePopup.bind(this)} className="trainerTime" >가능날짜 보기</button>
                     {this.state.showPopup ? 
                         <Popup  
-                        // text={datesformat}
+                        text={datesformat}
                          closePopup={this.togglePopup.bind(this)}
                         />
                         : null
@@ -80,7 +89,7 @@ class Popup extends React.Component {
       return (
         <div className='popup'>
           <div className='popup_inner'>
-          {this.props.text.split('\n').map((item, key) => {
+          {this.props.text.map((item, key) => {
                   return <span key={key}>{item}<br/></span>
                 })}
           </div>
