@@ -55,44 +55,45 @@ const models = require('../../models/models');
   };
   
   exports.create = (req, res) => {
-    // const name = req.body.name || '';
-    // if (!name.length) {
-    //   return res.status(400).json({error: 'Incorrenct name'});
-    // }
-    // const gym = req.body.gym || '';
-    // if (!gym.length) {
-    //   return res.status(400).json({error: 'Incorrenct gym'});
-    // }
-    // const gender = req.body.gender || '';
-    // if (!gender.length) {
-    //   return res.status(400).json({error: 'Incorrenct gender'});
-    // }
-    // const career = req.body.career || '';
-    // if (!career.length) {
-    //   return res.status(400).json({error: 'Incorrenct career'});
-    // }
-    // const dates = req.body.dates || '';
-    // if (!dates.length) {
-    //   return res.status(400).json({error: 'Incorrenct dates'});
-    // }
-    // const bodypart = req.body.bodypart || '';
-    // if (!bodypart.length) {
-    //   return res.status(400).json({error: 'Incorrenct bodypart'});
-    // }
-    // const playerSource = req.body.playerSource || '';
-    // if (!playerSource.length) {
-    //   return res.status(400).json({error: 'Incorrenct playerSource'});
-    // }
-    // const count = req.body.count || '';
-    // if (!count.length) {
-    //   return res.status(400).json({error: 'Incorrenct count'});
-    // }
-    // const setNum = req.body.setNum || '';
-    // if (!setNum.length) {
-    //   return res.status(400).json({error: 'Incorrenct setNum'});
-    // }
+    const name = req.body.name || '';
+    // console.log(name) ok
+    if (!name.length) {
+      return res.status(400).json({error: 'Incorrenct name'});
+    }
+    const gym = req.body.gym || '';
+    if (!gym.length) {
+      return res.status(400).json({error: 'Incorrenct gym'});
+    }
+    const gender = req.body.gender || '';
+    if (!gender.length) {
+      return res.status(400).json({error: 'Incorrenct gender'});
+    }
+    const career = req.body.career || '';
+    if (!career.length) {
+      return res.status(400).json({error: 'Incorrenct career'});
+    }
+    const dates = req.body.dates || '';
+    // console.log(dates) ok
+    if (!dates.length) {
+      return res.status(400).json({error: 'Incorrenct dates'});
+    }
+    const bodypart = req.body.bodypart || '';
+    if (!bodypart.length) {
+      return res.status(400).json({error: 'Incorrenct bodypart'});
+    }
+    const playerSource = req.body.playerSource || '';
+    if (!playerSource.length) {
+      return res.status(400).json({error: 'Incorrenct playerSource'});
+    }
+    const count = req.body.count || '';
+    if (!count.length) {
+      return res.status(400).json({error: 'Incorrenct count'});
+    }
+    const setNum = req.body.setNum || '';
+    if (!setNum.length) {
+      return res.status(400).json({error: 'Incorrenct setNum'});
+    }
     
-
     models.User.create({
       name : name,
       gym : gym,
@@ -103,9 +104,19 @@ const models = require('../../models/models');
       count : count,
       setNum : setNum,
       createdAt : new Date(),
-      updatedAt : new Date()
-      })
+      updatedAt : new Date(),
+      dates : [
+        {dates : dates}
+        // dates 가 array이니 join table에 넣는 법 검색
+      ]
+      }, { 
+        include : [
+          {model: models.dates
+          }]
+      }
+      )
       .then((user) => {res.status(201).json(user)
+        console.log("데이터 추가 성공");
         // res.redirect("/users")
     })
       .catch( err => {

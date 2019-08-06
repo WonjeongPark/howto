@@ -40,19 +40,13 @@ class TrainerProfile extends Component {
           };
         
         const dates = this.props.info.dates;
-        console.log(dates);
-        // for(var i=0; i<dates.length; i++){
+        // console.log(dates);
           const datesformat = dates.map(dates => new Date(dates.dates)
           .toLocaleString("ko-KR",
           { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })
-          // .replace(/,/g, '\n');
           )
-          console.log(datesformat)
-        // }
-        // console.log(datesformat)
-        // const datesformat = dates.toLocaleString("ko-KR",
-        // { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).replace(/,/g, '\n');
-        // 문자열? Date?
+          // console.log(datesformat)
+
         const {
             name, gym, gender, career,  id
           } = this.props.info;

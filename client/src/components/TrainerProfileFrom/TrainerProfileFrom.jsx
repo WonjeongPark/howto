@@ -13,8 +13,8 @@ class TrainerProfileForm extends Component {
     dates: [],
     bodypart: '',
     playerSource: '',
-    count: '',
-    setNum:''
+    count: 0,
+    setNum: 0
   }
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.state.playerSource !== prevState.playerSource) {
@@ -29,28 +29,32 @@ class TrainerProfileForm extends Component {
   }
   counterChange = (countername, counter) => {
     // console.log(countername, counter)
+    // console.log(this.state)
     this.setState({
       [countername]: counter
     });
   }
   dateChange = dates => {
-    //console.log(dates);
-    this.setState({ dates: [...dates] });
-    // console.log(this.state)
+    // console.log(dates);
+    const datesformat= dates.map(dates => dates.toISOString())
+    // console.log(datesformat)
+    this.setState({ dates: datesformat });
   }
 
   profileSubmit = (e) => {
     e.preventDefault();
       var data = 
-          { name: this.state.name,
+          { 
+          name: this.state.name,
           gym: this.state.gym,
           gender: this.state.gender,
           career:this.state.career,
-          // dates: this.state.dates,
           bodypart: this.state.bodypart,
           playerSource:this.state.playerSource,
           count:this.state.count,
-          setNum:this.state.setNum } 
+          setNum:this.state.setNum,
+          dates: this.state.dates
+          } 
       
       console.log(data)
       fetch("/users", {
@@ -65,7 +69,7 @@ class TrainerProfileForm extends Component {
       }).then(function(data) {
           console.log(data)    
           if(data === "success"){
-            this.setState({msg: "Thanks for registering"});  
+            console.log("Thanks for registering");  
           }
       }).catch(function(err) {
           console.log(err)
@@ -101,17 +105,17 @@ class TrainerProfileForm extends Component {
             <option value="4년~5년">4년~5년</option>
             <option value="5년이상">5년~</option>
         </select>
-        <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} />
+        <MultipleDatePicker onSubmit={this.dateChange} minDate={new Date()} required="required"/>
         
         <div>
         동영상URL : 
-        <input ref="playerSource" name="playerSource" id="playerSource"
-        value={this.state.value} onChange={this.ProfileChange}
+        <input type= "text" ref="playerSource" name="playerSource" id="playerSource"
+        value={this.state.value} onChange={this.ProfileChange} required="required"
         />
         <div>http://media.w3.org/2010/05/bunny/trailer.mp4</div>
 
-        <div className="body" value={this.state.value} onChange={this.ProfileChange} required="required">주요운동부위
-        <input type="radio" name="bodypart" value="등" />등
+        <div className="body" value={this.state.value} onChange={this.ProfileChange} >주요운동부위
+        <input type="radio" name="bodypart" value="등" required />등
         <input type="radio" name="bodypart" value="복부"/>복부
         <input type="radio" name="bodypart" value="목"/>목
         <input type="radio" name="bodypart" value="팔"/>팔
@@ -120,7 +124,7 @@ class TrainerProfileForm extends Component {
         <input type="radio" name="bodypart" value="종아리"/>종아리
         </div>
         <Counter countname="count" countvalue={this.state.value} onChangeCounter={this.counterChange}
-         setname="setNum"  setvalue={this.state.value} />
+         setname="setNum"  setvalue={this.state.value} required="required"/>
         </div>
         <button type="submit">등록</button>
       </form>
