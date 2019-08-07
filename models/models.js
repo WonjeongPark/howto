@@ -31,7 +31,7 @@ const User = sequelize.define('users', {
     bodypart:Sequelize.STRING,
     playerSource:Sequelize.STRING,
     count:Sequelize.INTEGER,
-    setNum:Sequelize.INTEGER
+    Num:Sequelize.INTEGER
 }, { 
     // sequelize, modelName: 'user',
     // underscored: true

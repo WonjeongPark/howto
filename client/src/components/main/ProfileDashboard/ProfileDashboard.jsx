@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
 import TrainerProfileList from '../TrainerProfileList/TrainerProfileList'
-// import TrainerVideos from '../TrainerVideoList/TrainerVideos'
+import TrainerVideos from '../TrainerVideoList/TrainerVideos'
 import TrainerProfileForm from '../../TrainerProfileFrom/TrainerProfileFrom'
 
 class ProfileDashboard extends Component {
@@ -13,7 +13,7 @@ class ProfileDashboard extends Component {
       // Call our fetch function below once the component mounts
 
     this.callBackendAPI()
-      .then(res => {console.log(res)
+      .then(res => {
         this.setState( 
         {users : res}
       )} )
@@ -58,7 +58,7 @@ class ProfileDashboard extends Component {
             <TrainerProfileList data={users} onRemove={this.profileRemove}/>
             </Grid.Column>
             <Grid.Column width={9}>
-            {/* <TrainerVideos data={users}/> */}
+            <TrainerVideos data={users}/>
             </Grid.Column>
       </Grid>
     )

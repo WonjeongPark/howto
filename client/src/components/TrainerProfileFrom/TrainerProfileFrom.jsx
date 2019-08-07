@@ -13,8 +13,8 @@ class TrainerProfileForm extends Component {
     dates: [],
     bodypart: '',
     playerSource: '',
-    count: 0,
-    setNum: 0
+    count: 10,
+    Num: 3
   }
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.state.playerSource !== prevState.playerSource) {
@@ -43,7 +43,7 @@ class TrainerProfileForm extends Component {
 
   profileSubmit = (e) => {
     e.preventDefault();
-      var data = 
+      const data = 
           { 
           name: this.state.name,
           gym: this.state.gym,
@@ -52,20 +52,19 @@ class TrainerProfileForm extends Component {
           bodypart: this.state.bodypart,
           playerSource:this.state.playerSource,
           count:this.state.count,
-          setNum:this.state.setNum,
+          Num:this.state.Num,
           dates: this.state.dates
           } 
-      
       console.log(data)
       fetch("/users", {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
-      }).then(function(response) {
-          if (response.status >= 400) {
+      }).then(function(res) {
+          if (res.status >= 400) {
             throw new Error("Bad response from server");
           }
-          return response.json();
+          return res.json();
       }).then(function(data) {
           console.log(data)    
           if(data === "success"){
@@ -111,6 +110,7 @@ class TrainerProfileForm extends Component {
         동영상URL : 
         <input type= "text" ref="playerSource" name="playerSource" id="playerSource"
         value={this.state.value} onChange={this.ProfileChange} required="required"
+        placeholder="http://media.w3.org/2010/05/bunny/trailer.mp4"
         />
         <div>http://media.w3.org/2010/05/bunny/trailer.mp4</div>
 
