@@ -56,52 +56,50 @@ const models = require('../../models/models');
   
   exports.create = (req, res) => {
     const name = req.body.name || '';
-    // console.log(name)
+    console.log(name)
     if (!name.length) {
       return res.status(400).json({err: 'Incorrect name'});
     }
     const gym = req.body.gym || '';
-    // console.log(gym)
+    console.log(gym)
     if (!gym.length) {
       return res.status(400).json({err: 'Incorrect gym'});
     }
     const gender = req.body.gender || '';
-    // console.log(gender)
+    console.log(gender)
     if (!gender.length) {
       return res.status(400).json({err: 'Incorrect gender'});
     }
     const career = req.body.career || '';
-    // console.log(career)
+    console.log(career)
     if (!career.length) {
       return res.status(400).json({err: 'Incorrect career'});
     }
     const dates = req.body.dates || '';
-    // console.log(dates)
+    console.log(dates)
     if (!dates.length) {
       return res.status(400).json({err: 'Incorrect dates'});
     }
     const bodypart = req.body.bodypart || '';
-    // console.log(bodypart)
+    console.log(bodypart)
     if (!bodypart.length) {
       return res.status(400).json({err: 'Incorrect bodypart'});
     }
     const playerSource = req.body.playerSource || '';
-    // console.log(playerSource)
+    console.log(playerSource)
     if (!playerSource.length) {
       return res.status(400).json({err: 'Incorrect playerSource'});
     }
     const count = req.body.count || '';
-    // console.log(count)
+    console.log(count)
     if (!count.length) {
       return res.status(400).json({err: 'Incorrect count'});
     }
     const Num = req.body.Num || '';
     console.log(Num)
-    // console.log(req.body)
     if (!Num.length) {
       return res.status(400).json({err: 'Incorrect Num'});
     }
-    
     
     
     // const datesList = dates.map({dates : dates})
@@ -115,22 +113,23 @@ const models = require('../../models/models');
       playerSource : playerSource,
       count : count,
       Num : Num,
-      createdAt : new Date(),
-      updatedAt : new Date(),
+      // createdAt : new Date(),
+      // updatedAt : new Date(),
       //  },{
       //   include: [{
       //       model: models.dates, 
       //       include: [models.dates]
       //   }]
-      // dates : [
-      //   dates.map(dates => {dates : dates})
-      //   // dates 가 array이니 join table에 넣는 법 검색
-      // ]
-      // }, { 
-      //   include : [ dates
-      //     // {association: User.dates,
-      //     // include: [ dates.dates ]}
-      //   ]
+      dates : [
+        // dates.map(dates => {dates : dates})
+        {dates : dates}
+        // dates 가 array이니 join table에 넣는 법 검색
+      ]
+      }, { 
+        include : [ Dates
+          // {association: User.dates,
+          // include: [ dates.dates ]}
+        ]
       })
       // .then(user => user.addDates(dates))
       // .then(models.dates.bulkCreate(dates))

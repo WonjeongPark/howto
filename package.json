@@ -4,6 +4,7 @@
   "description": "community between Personal trainer & trainee",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js --ignore client" ,
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

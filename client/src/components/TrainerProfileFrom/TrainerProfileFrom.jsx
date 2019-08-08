@@ -56,11 +56,18 @@ class TrainerProfileForm extends Component {
           dates: this.state.dates
           } 
       console.log(data)
+
+      // var dataFormat = new FormData();
+      // dataFormat.append( "json", JSON.stringify( data ) );
+      
       fetch("/users", {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(data)
-      }).then(function(res) {
+          body: 
+          // dataFormat
+          JSON.stringify(data)
+      }).then(
+          function(res) {
           if (res.status >= 400) {
             throw new Error("Bad response from server");
           }
