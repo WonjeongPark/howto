@@ -10,17 +10,13 @@ class ProfileDashboard extends Component {
   };
 
   componentDidMount() {
-      // Call our fetch function below once the component mounts
-
-    this.callBackendAPI()
+     this.callBackendAPI()
       .then(res => {
         this.setState( 
         {users : res}
       )} )
       .catch(err => console.log(err));
   }
-  // Fetches our GET route from the Express server. 
-  //(Note the route we are fetching matches the GET route from server.js
   callBackendAPI = async () => {
     const response = await fetch('/users');
     const body = await response.json();

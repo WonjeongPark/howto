@@ -44,66 +44,19 @@ const models = require('../../models/models');
         id: id
       }
     }).then(() => res.status(204).send());
-  
-    // const userIdx = users.findIndex(user => user.id === id);
-    // if (userIdx === -1) {
-    //   return res.status(404).json({error: 'Unknown user'});
-    // }
-  
-    // users.splice(userIdx, 1);
-    // res.status(204).send();
   };
   
   exports.create = (req, res) => {
-    const name = req.body.name || '';
-    console.log(name)
-    if (!name.length) {
-      return res.status(400).json({err: 'Incorrect name'});
-    }
-    const gym = req.body.gym || '';
-    console.log(gym)
-    if (!gym.length) {
-      return res.status(400).json({err: 'Incorrect gym'});
-    }
-    const gender = req.body.gender || '';
-    console.log(gender)
-    if (!gender.length) {
-      return res.status(400).json({err: 'Incorrect gender'});
-    }
-    const career = req.body.career || '';
-    console.log(career)
-    if (!career.length) {
-      return res.status(400).json({err: 'Incorrect career'});
-    }
-    const dates = req.body.dates || '';
-    console.log(dates)
-    if (!dates.length) {
-      return res.status(400).json({err: 'Incorrect dates'});
-    }
-    const bodypart = req.body.bodypart || '';
-    console.log(bodypart)
-    if (!bodypart.length) {
-      return res.status(400).json({err: 'Incorrect bodypart'});
-    }
-    const playerSource = req.body.playerSource || '';
-    console.log(playerSource)
-    if (!playerSource.length) {
-      return res.status(400).json({err: 'Incorrect playerSource'});
-    }
-    const count = req.body.count || '';
-    console.log(count)
-    if (!count.length) {
-      return res.status(400).json({err: 'Incorrect count'});
-    }
-    const Num = req.body.Num || '';
-    console.log(Num)
-    if (!Num.length) {
-      return res.status(400).json({err: 'Incorrect Num'});
-    }
-    
-    
-    // const datesList = dates.map({dates : dates})
-    // console.log(datesList)
+    const name = req.body.name
+    const gym = req.body.gym
+    const gender = req.body.gender
+    const career = req.body.career
+    const dates = req.body.dates
+    const bodypart = req.body.bodypart
+    const playerSource = req.body.playerSource
+    const count = req.body.count
+    const Num = req.body.Num
+
     models.User.create({
       name : name,
       gym : gym,
@@ -113,26 +66,14 @@ const models = require('../../models/models');
       playerSource : playerSource,
       count : count,
       Num : Num,
-      // createdAt : new Date(),
-      // updatedAt : new Date(),
-      //  },{
-      //   include: [{
-      //       model: models.dates, 
-      //       include: [models.dates]
-      //   }]
       dates : [
-        // dates.map(dates => {dates : dates})
-        {dates : dates}
-        // dates 가 array이니 join table에 넣는 법 검색
+        dates
       ]
       }, { 
-        include : [ Dates
-          // {association: User.dates,
-          // include: [ dates.dates ]}
-        ]
+        include : [{
+          dates
+          }]
       })
-      // .then(user => user.addDates(dates))
-      // .then(models.dates.bulkCreate(dates))
       .then((user) => {res.status(201).json(user)
         console.log("데이터 추가 성공");
         // res.redirect("/users")
@@ -141,12 +82,42 @@ const models = require('../../models/models');
         console.log("데이터 추가 실패");
       }) 
     // models.dates.Create({
-    //   users_id : id,
-    //   dates : dates
-    // 배열 dates -> 각각 id, dates로 저장하는 법 찾기
+    //   dates : {dates : dates}
     // })
   };
-
+  //TEST 만들고 옮기기
+  // exports.create = (req, res) => {
+  //     const name = req.body.name
+  //     const gym = req.body.gym
+  //     const gender = req.body.gender
+  //     const career = req.body.career
+  //     const dates = req.body.dates
+  //     const bodypart = req.body.bodypart
+  //     const playerSource = req.body.playerSource
+  //     const count = req.body.count
+  //     const Num = req.body.Num
+  //   return Promise.all([
+  //     models.User.create({
+  //           name : name,
+  //           gym : gym,
+  //           gender : gender,
+  //           career : career,
+  //           bodypart : bodypart,
+  //           playerSource : playerSource,
+  //           count : count,
+  //           Num : Num
+  //         })
+  //   ]),
+  //     models.dates.create({
+  //           dates:dates
+  //     }).then(
+  //       ([name, dates])=> {
+  //         return Promise.all([
+  //           dates.setUser(name)
+  //         ])
+  //       }
+  //     ).catch(error => console.log(error));
+  //   }
 
   exports.update = (req, res) => {
     res.send()

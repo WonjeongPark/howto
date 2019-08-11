@@ -16,28 +16,18 @@ class TrainerProfileForm extends Component {
     count: 10,
     Num: 3
   }
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (this.state.playerSource !== prevState.playerSource) {
-  //     this.refs.player.load();
-  //     console.log(this.refs)
-  //   }
-  // }
   ProfileChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
   counterChange = (countername, counter) => {
-    // console.log(countername, counter)
-    // console.log(this.state)
     this.setState({
       [countername]: counter
     });
   }
   dateChange = dates => {
-    // console.log(dates);
     const datesformat= dates.map(dates => dates.toISOString())
-    // console.log(datesformat)
     this.setState({ dates: datesformat });
   }
 
@@ -56,16 +46,11 @@ class TrainerProfileForm extends Component {
           dates: this.state.dates
           } 
       console.log(data)
-
-      // var dataFormat = new FormData();
-      // dataFormat.append( "json", JSON.stringify( data ) );
       
       fetch("/users", {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: 
-          // dataFormat
-          JSON.stringify(data)
+          body: JSON.stringify(data)
       }).then(
           function(res) {
           if (res.status >= 400) {
