@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js --ignore client",
-    "test": "node test/users.spec.js"
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "mocha": "^6.2.0",
+    "node-mocks-http": "^1.7.6",
     "should": "^13.2.3",
     "sinon": "^7.4.1"
   }

@@ -1,3 +1,5 @@
 var httpMocks = require('node-mocks-http');
 req = httpMocks.createRequest();
-res = httpMocks.createResponse();
+res = httpMocks.createResponse({
+    // eventEmitter: EventEmitter
+});
