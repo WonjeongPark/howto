@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/client/src"
+        },
+
+        {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
@@ -14,7 +22,8 @@
             "type": "node",
             "request": "attach",
             "name": "Attach to Process",
-            "port": 5000
-        }
+            "processId": "${command:PickProcess}"
+        },
+        
     ]
 }

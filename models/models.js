@@ -50,7 +50,7 @@ const dates = sequelize.define('dates', {
     
 });
 User.hasMany(dates, {foreignKey: 'users_id', sourceKey: 'id'});
-dates.belongsTo(User, {foreignKey: 'users_id', targetKey: 'id'})
+// dates.belongsTo(User, {foreignKey: 'users_id', targetKey: 'id'})
 
 // User.associate = (models) => {
 //     User.hasMany(models.dates);
