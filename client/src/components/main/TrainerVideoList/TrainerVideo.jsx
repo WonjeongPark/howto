@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Icon } from 'semantic-ui-react'
+import { Grid, Icon, Button } from 'semantic-ui-react'
 import './TrainerVideo.css';
 import "../../../../node_modules/video-react/dist/video-react.css"
 import { Player, ControlBar } from 'video-react';
@@ -42,9 +42,8 @@ class TrainerVideo extends Component {
                     <div>권장운동량 : {count}회 {Num}set</div>
                     
                     <div className="videoIcons">
-                    <Icon className="icon" name="heart outline" size="large"/>
-                    <Icon className="icon" name="comments outline" size="large"/>
-                    <Icon className="icon" name="share square" size="large" />
+                    <Button icon='heart' />
+                    <Button icon='fork' />
                     </div>
                     
                 </Grid.Column>

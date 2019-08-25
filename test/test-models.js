@@ -20,6 +20,45 @@ const sequelize = new Sequelize(
         },
         })
 
-exports.User = sequelize.define('User', {
-  name: Sequelize.STRING
+// exports.User = sequelize.define('User', {
+//   name: Sequelize.STRING
+// });
+
+
+const User = sequelize.define('users', {
+  id: {
+      type: Sequelize.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+  name:Sequelize.STRING,
+  gym:Sequelize.STRING,
+  gender:Sequelize.STRING,
+  career:Sequelize.STRING,
+  bodypart:Sequelize.STRING,
+  playerSource:Sequelize.STRING,
+  count:Sequelize.INTEGER,
+  Num:Sequelize.INTEGER
+}, { 
 });
+
+const dates = sequelize.define('dates', {
+  users_id: {
+      type: Sequelize.INTEGER,
+      references: {
+          model: User,
+          key: `id`
+        }},
+  dates:Sequelize.DATE,
+},{
+  timestamps : false,
+  
+});
+User.hasMany(dates, {foreignKey: 'users_id', sourceKey: 'id'});
+// dates.belongsTo(User, {foreignKey: 'users_id', targetKey: 'id'})
+
+module.exports = {
+  sequelize: sequelize,
+  User : User,
+  dates : dates
+}

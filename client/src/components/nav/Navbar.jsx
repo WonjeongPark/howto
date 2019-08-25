@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { Menu, Container, Button } from 'semantic-ui-react'
-import logo from '../../logo.svg'
+import howto_logo from '../../howto_logo.png'
 
 class NavBar extends Component {
+  
   render() {
     return (
-            <Menu inverted>
+            <Menu inverted color='violet'>
               <Container>
                 <Menu.Item header>
-                  <img src={logo} alt="logo" />
+                  <img src={howto_logo} alt="logo" style={{marginRight: '0.5em'}}/>
                   Howto
                 </Menu.Item>
-                <Menu.Item name="Board" />
+                {/* <Menu.Item name="Board" /> */}
                 {/* <Menu.Item>
                   <Button floated="right" positive inverted content="Create Event" />
                 </Menu.Item> */}

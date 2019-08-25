@@ -33,8 +33,6 @@ const User = sequelize.define('users', {
     count:Sequelize.INTEGER,
     Num:Sequelize.INTEGER
 }, { 
-    // sequelize, modelName: 'user',
-    // underscored: true
 });
 
 const dates = sequelize.define('dates', {
@@ -51,14 +49,6 @@ const dates = sequelize.define('dates', {
 });
 User.hasMany(dates, {foreignKey: 'users_id', sourceKey: 'id'});
 // dates.belongsTo(User, {foreignKey: 'users_id', targetKey: 'id'})
-
-// User.associate = (models) => {
-//     User.hasMany(models.dates);
-//   };
-
-// dates.associate = (models) => {
-//     dates.belongsTo(models.User);
-// };
 
 module.exports = {
     sequelize: sequelize,
