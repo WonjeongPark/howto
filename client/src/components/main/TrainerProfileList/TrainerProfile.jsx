@@ -50,12 +50,15 @@ class TrainerProfile extends Component {
         const {
             name, gym, gender, career,  id
           } = this.props.info;
-
+        
+        const rd = Math.floor(Math.random() * 100) + 1;
+        const rdU = 'https://randomuser.me/api/portraits/women/'
+        // console.log(this.state.gender)
         return (
           
             <Grid className="trainerprofile" style={style}>
                 <Grid.Column className="trainerprofile-left" width={6}>
-                    <img alt="profilePhoto" src="https://randomuser.me/api/portraits/women/42.jpg"/>
+                    <img alt="profilePhoto" src={rdU.concat(rd).concat(".jpg")}/>
                     <div className="trainer-name">{name}</div>
                     <div className="trainer-gym">{gym}</div>
                 </Grid.Column>

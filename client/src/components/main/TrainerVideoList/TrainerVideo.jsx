@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Icon, Button } from 'semantic-ui-react'
+import { Grid, Button } from 'semantic-ui-react'
 import './TrainerVideo.css';
 import "../../../../node_modules/video-react/dist/video-react.css"
 import { Player, ControlBar } from 'video-react';
