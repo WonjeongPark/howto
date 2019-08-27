@@ -12,8 +12,7 @@ const getWidth = () => {
 }
 
 const HomepageHeading = ({ mobile }) => (
-  <Container>
-    <p style={{backgroundColor : 'white'}}>
+  <Container style={{backgroundColor : 'white'}}>
       <Image src={howto_logo}
             size='Massive'
             verticalAlign='middle'
@@ -22,34 +21,36 @@ const HomepageHeading = ({ mobile }) => (
               
             }} />
         <div>Find your Trainer!</div>
-    </p>
-      <Container text>
-        <Header
-          as='h1'
-          content='Welcome To HowTo'
-          inverted
-          style={{
-            fontSize: mobile ? '2em' : '4em',
-            fontWeight: 'normal',
-            marginBottom: 0,
-            marginTop: mobile ? '0.5em' : '1em',
-          }}
-        />
-        <Header
-          as='h2'
-          content='나에게 맞는 트레이너 찾기'
-          inverted
-          style={{
-            fontSize: mobile ? '1.5em' : '1.7em',
-            fontWeight: 'normal',
-            marginTop: mobile ? '0.5em' : '1.5em',
-          }}
-        />
-        <Button as={Link} to='/SignIn' color='white' size='huge' style={{margin: '1em'}} >
-          트레이너 찾기
-          <Icon name='right arrow' />
-        </Button>
-    </Container>
+    
+        <Container text>
+          <Header
+            as='h1'
+            content='Welcome To HowTo'
+            inverted
+            color='violet'
+            style={{
+              fontSize: mobile ? '2em' : '4em',
+              fontWeight: 'bold',
+              marginBottom: 0,
+              marginTop: mobile ? '0.5em' : '1em',
+            }}
+          />
+          <Header
+            as='h2'
+            content='나에게 맞는 트레이너 찾기'
+            inverted
+            color='violet'
+            style={{
+              fontSize: mobile ? '1.5em' : '1.7em',
+              fontWeight: 'bold',
+              marginTop: mobile ? '0.5em' : '1.5em',
+            }}
+          />
+          <Button as={Link} to='/SignIn' color='violet' size='huge' style={{margin: '1em'}} >
+            트레이너 찾기
+            <Icon name='right arrow' />
+          </Button>
+      </Container>
   </Container>
 )
 

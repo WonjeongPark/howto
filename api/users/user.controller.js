@@ -47,6 +47,8 @@ const models = require('../../models/models');
   };
   
   exports.create = (req, res) => {
+    const loginID = req.body.loginID
+    const loginPW = req.body.loginPW
     const name = req.body.name
     const gym = req.body.gym
     const gender = req.body.gender
@@ -61,6 +63,8 @@ const models = require('../../models/models');
     dates.forEach(function(dates){ datesList.push({dates}) });
 
     models.User.create({
+      loginID : loginID,
+      loginPW : loginPW,
       name : name,
       gym : gym,
       gender : gender,
@@ -77,7 +81,7 @@ const models = require('../../models/models');
       })
       .then((user) => {res.status(201).json(user)
         console.log("데이터 추가 성공");
-        res.redirect("/TrainerEvent")
+        res.redirect("/TrainerList")
     })
       .catch( err => {
         console.log("데이터 추가 실패");

@@ -30,7 +30,6 @@ class App extends Component {
                   <Switch>
                     <Route path="/SignIn" component={SignIn} />
                     <Route path="/SignUp" component={SignUp} />
-                    {/* <ProtectedRoute isAllowed={isTokenVerified} exact path="/TrainerList" component={ProfileDashboard}/> */}
                     <Route path="/TrainerList" component={ProfileDashboard} />
                   </Switch>
                 </Container>

@@ -24,6 +24,12 @@ const User = sequelize.define('users', {
         primaryKey: true,
         autoIncrement: true
       },
+    loginID:{
+        type : Sequelize.STRING,
+        allowNull: false},
+    loginPW:{
+        type : Sequelize.STRING,
+        allowNull: false},
     name:Sequelize.STRING,
     gym:Sequelize.STRING,
     gender:Sequelize.STRING,
@@ -31,7 +37,8 @@ const User = sequelize.define('users', {
     bodypart:Sequelize.STRING,
     playerSource:Sequelize.STRING,
     count:Sequelize.INTEGER,
-    Num:Sequelize.INTEGER
+    Num:Sequelize.INTEGER,
+    
 }, { 
 });
 

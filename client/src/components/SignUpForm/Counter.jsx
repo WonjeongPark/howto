@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Button, Form} from 'semantic-ui-react'
 
 export const Counter=({onChangeCounter, countvalue, countname, setname, setvalue})=>{
       
@@ -40,22 +40,23 @@ export const Counter=({onChangeCounter, countvalue, countname, setname, setvalue
     return(
       
         <div>
-        <input
+        <Form.Input
         type="text" name="count" value={count}
         onChange={event => inputCount(event)}
+        
       />  
-      회
-        <button type="button" countname="count" value={count} onClick={() => increCount()} >+1</button>
-        <button type="button" countname="count" value={count} onClick={() => decreCount()} >-1</button>
+      
+        <Button type="button" countname="count" value={count} onClick={() => increCount()} >+1</Button>
+        <Button type="button" countname="count" value={count} onClick={() => decreCount()} >-1</Button>
         <br />
 
  
-         <input
+         <Form.Input
          type="text" name="set" value={Num}
          onChange={event => inputSet(event)}
-       /> set 반복
-        <button type="button" setname="set" value={Num} onClick={() => increSet()}>+1</button>
-        <button type="button" setname="set" value={Num} onClick={() => decreSet()}>-1</button>
+       />
+        <Button type="button" setname="set" value={Num} onClick={() => increSet()}>+1</Button>
+        <Button type="button" setname="set" value={Num} onClick={() => decreSet()}>-1</Button>
         </div>)
         }
  

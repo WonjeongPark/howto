@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
 import TrainerProfileList from '../TrainerProfileList/TrainerProfileList'
 import TrainerVideos from '../TrainerVideoList/TrainerVideos'
-import TrainerProfileForm from '../../TrainerProfileFrom/TrainerProfileFrom'
 
 class ProfileDashboard extends Component {
   state = {
@@ -27,13 +26,6 @@ class ProfileDashboard extends Component {
     return body;
   };
 
-  profileCreate = (data) => {
-    const { users } = this.state;
-    this.setState({
-        users: users.concat({ id: this.id++, ...data })
-    })
-  } 
-
   profileRemove = (id) => {
     const { users } = this.state;
     this.setState({
@@ -49,8 +41,6 @@ class ProfileDashboard extends Component {
     return (
       <Grid>
             <Grid.Column width={7}>
-            <TrainerProfileForm
-            onCreate={this.profileCreate}/>
             <TrainerProfileList data={users} onRemove={this.profileRemove}/>
             </Grid.Column>
             <Grid.Column width={9}>
