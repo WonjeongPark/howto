@@ -50,15 +50,14 @@ class TrainerProfile extends Component {
         const {
             name, gym, gender, career,  id
           } = this.props.info;
-        
-        const rd = Math.floor(Math.random() * 100) + 1;
+ 
         const rdU = 'https://randomuser.me/api/portraits/women/'
         // console.log(this.state.gender)
         return (
           
             <Grid className="trainerprofile" style={style}>
                 <Grid.Column className="trainerprofile-left" width={6}>
-                    <img alt="profilePhoto" src={rdU.concat(rd).concat(".jpg")}/>
+                    <img alt="profilePhoto" src={rdU.concat(`${id}`).concat(".jpg")}/>
                     <div className="trainer-name">{name}</div>
                     <div className="trainer-gym">{gym}</div>
                 </Grid.Column>
@@ -75,7 +74,7 @@ class TrainerProfile extends Component {
                     }
                     <div>오른쪽에서 운동영상 보기</div>
                     <div>수강생평가 : {id}</div>
-                    <Button className="delete" onRemove={this.profileRemove}>해당 트레이너 그만보기</Button>
+                    <Button><i aria-hidden="true" class="envelope icon"></i>트레이너 연락하기</Button>
                 </Grid.Column>
             </Grid>
         )

@@ -38,25 +38,27 @@ export const Counter=({onChangeCounter, countvalue, countname, setname, setvalue
     };
     // console.log(set)
     return(
-      
-        <div>
+        <div className="countAll">
+        <div className="count">
         <Form.Input
-        type="text" name="count" value={count}
+        type="text" name="count" className="countInput" value={count}
         onChange={event => inputCount(event)}
         
       />  
       
-        <Button type="button" countname="count" value={count} onClick={() => increCount()} >+1</Button>
-        <Button type="button" countname="count" value={count} onClick={() => decreCount()} >-1</Button>
+        <Button type="button" countname="count" className="countBtn" value={count} onClick={() => increCount()} >+1</Button>
+        <Button type="button" countname="count" className="countBtn" value={count} onClick={() => decreCount()} >-1</Button>
         <br />
+        </div>
 
- 
+        <div>
          <Form.Input
-         type="text" name="set" value={Num}
+         type="text" name="set" className="countInput" value={Num}
          onChange={event => inputSet(event)}
        />
-        <Button type="button" setname="set" value={Num} onClick={() => increSet()}>+1</Button>
-        <Button type="button" setname="set" value={Num} onClick={() => decreSet()}>-1</Button>
+        <Button type="button" setname="set" className="countBtn" value={Num} onClick={() => increSet()}>+1</Button>
+        <Button type="button" setname="set" className="countBtn" value={Num} onClick={() => decreSet()}>-1</Button>
+        </div>
         </div>)
         }
  

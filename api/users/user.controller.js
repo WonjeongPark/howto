@@ -79,7 +79,7 @@ const models = require('../../models/models');
           model: models.dates
           }]
       })
-      .then((user) => {res.status(201).json(user)
+      .then((user) => {res.status(302).json(user)
         console.log("데이터 추가 성공");
         res.redirect("/TrainerList")
     })

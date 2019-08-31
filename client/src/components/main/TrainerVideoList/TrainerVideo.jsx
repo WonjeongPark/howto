@@ -43,7 +43,7 @@ class TrainerVideo extends Component {
                     
                     <div className="videoIcons">
                     <Button icon='heart' />
-                    <Button icon='fork' />
+                    <Button icon='envelope' />
                     </div>
                     
                 </Grid.Column>

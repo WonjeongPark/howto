@@ -6,15 +6,10 @@ import ProfileDashboard from '../main/ProfileDashboard/ProfileDashboard'
 import HomePage from '../Home/Homepage.jsx'
 import NavBar from '../nav/Navbar'
 import SignIn from '../SignInForm/SignIn'
-import SignUp from '../SignUpForm/TrainerProfileFrom'
+import SignUp from '../SignUpForm/TrainerProfileForm'
 
 class App extends Component {
   render() {
-  //   const ProtectedRoute 
-  // = ({ isAllowed, ...props }) => 
-  //    isAllowed 
-  //    ? <Route {...props}/> 
-  //    : <Redirect to="/SignIn"/>;
     return (
         <div>
             <Switch>
