@@ -80,7 +80,7 @@ class hompage extends Component {
             color='violet'
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 1000, padding: '1em 0em' }}
             vertical
           >
             <Menu

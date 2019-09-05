@@ -17,8 +17,8 @@ class NavBar extends Component {
                   <Button floated="right" positive inverted content="Create Event" />
                 </Menu.Item> */}
                 <Menu.Item position="right">
-                  <Button basic inverted content="My profile" />
-                  <Button basic inverted content="Sign out" style={{marginLeft: '0.5em'}} />
+                  <Button basic inverted content="My Profile" />
+                  <Button basic inverted content="SignOut" style={{marginLeft: '0.5em'}} />
                 </Menu.Item>
               </Container>
             </Menu>
