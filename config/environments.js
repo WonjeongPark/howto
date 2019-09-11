@@ -3,7 +3,7 @@ const environments = {
       mysql: {
         username: 'root',
         password: 'howto@@',
-        database: 'ex_nodejs_db',
+        database: 'howto_db',
         host: '127.0.0.1',
         dialect: 'mysql'
       }

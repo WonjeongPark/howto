@@ -14,7 +14,7 @@ const getWidth = () => {
 const HomepageHeading = ({ mobile }) => (
   <Container style={{backgroundColor : 'white'}}>
       <Image src={howto_logo}
-            size='Massive'
+            size='small'
             verticalAlign='middle'
             style={{
               marginTop: mobile ? '3em' : '5em',

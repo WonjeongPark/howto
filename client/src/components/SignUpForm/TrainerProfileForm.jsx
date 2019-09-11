@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Button, Grid, Header, Image, Divider, Segment } from 'semantic-ui-react'
 // import { Link } from 'react-router-dom'
+import Postcode from './Postcode'
 import howto_logo from '../../howto_logo.png'
 import MultipleDatePicker from 'react-multiple-datepicker'
 import Counter from './Counter'
@@ -9,14 +10,31 @@ import './TrainerProfileForm.css';
 
 
 class TrainerProfileForm extends Component {
-  
+
+  constructor(props){
+    super(props);
+    this.state = {
+      isModalOpen: false, 
+    }
+  }
+
+  openModal = () => {
+    this.setState({ isModalOpen: true });
+  }
+
+  closeModal = () => {
+    this.setState({ isModalOpen: false }); 
+  }
+ 
   state = {
     loginID : '',
     loginPW : '',
     loginPWCK: '',
     name: '',
-    gym: '',
+    email:'',
+    local:'',
     gender: '',
+    gym: '',
     career:'',
     dates: [],
     bodypart: '',
@@ -28,6 +46,7 @@ class TrainerProfileForm extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+    console.log(this.state)
   }
   counterChange = (countername, counter) => {
     this.setState({
@@ -65,6 +84,8 @@ class TrainerProfileForm extends Component {
           loginID: this.state.loginID,
           loginPW: this.state.loginPW,
           name: this.state.name,
+          email:this.state.email,
+          local:this.state.local,
           gym: this.state.gym,
           gender: this.state.gender,
           career:this.state.career,
@@ -142,6 +163,17 @@ class TrainerProfileForm extends Component {
             <option value="여성">여성</option>
             <option value="남성">남성</option>
         </select>
+        <div className="group">
+          <input type="text" className="email" value={this.state.email} onChange={this.ProfileChange}
+           name="email" required="required"/>
+          <span className="highlight"></span><span className="bar"></span>
+          <label>Email</label>
+        </div>
+        <div className="group">
+        <input type="text" onClick={this.openModal} placeholder="주소입력"></input>
+        <Postcode name="local" required="required" value={this.fullAdress} onChangePost={this.ProfileChange}
+        isOpen={this.state.isModalOpen} close={this.closeModal}/>
+        </div>
         <div className="group">
           <input type="text" value={this.state.gym} onChange={this.ProfileChange}
            name="gym" required="required"/>
