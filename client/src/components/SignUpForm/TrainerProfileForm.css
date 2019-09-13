@@ -68,10 +68,12 @@ form {
     ime-mode: disabled;
   }
 
-  label {
+  .local, label{
     color: #c6c6c6;
     font-size: 16px;
     font-weight: normal;
+  }
+  label {
     position: absolute;
     pointer-events: none;
     left: 5px;

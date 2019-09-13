@@ -50,8 +50,10 @@ const models = require('../../models/models');
     const loginID = req.body.loginID
     const loginPW = req.body.loginPW
     const name = req.body.name
-    const gym = req.body.gym
+    const email = req.body.email
+    const local = req.body.local
     const gender = req.body.gender
+    const gym = req.body.gym
     const career = req.body.career
     const dates = req.body.dates
     const bodypart = req.body.bodypart
@@ -66,26 +68,31 @@ const models = require('../../models/models');
       loginID : loginID,
       loginPW : loginPW,
       name : name,
-      gym : gym,
+      email : email,
+      local : local,
       gender : gender,
+      // Trainer -> trainer ( tablename : trainers X)
+      trainer : 
+      {gym : gym,
       career : career,
       bodypart : bodypart,
       playerSource : playerSource,
       count : count,
       Num : Num,
-      dates : datesList
-      }, { 
-        include : [{
-          model: models.dates
-          }]
+      dates : datesList}
+      },{
+        include: [{
+          model: models.Trainer,
+          include : [{ model: models.dates }]
+        }]
+      })
+      .catch( err => {
+        console.log("데이터 추가 실패 : ", err);
       })
       .then((user) => {res.status(302).json(user)
         console.log("데이터 추가 성공");
-        res.redirect("/TrainerList")
+        res.redirect("/TrainerList" )
     })
-      .catch( err => {
-        console.log("데이터 추가 실패");
-      }) 
 
   };
 

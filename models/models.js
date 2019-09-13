@@ -67,11 +67,10 @@ const dates = sequelize.define('dates', {
     timestamps : false,
     
 });
-Trainer.belongsTo(User)
-Trainee.belongsTo(User)
-Trainer.hasMany(dates, {foreignKey: 'trainers_id', sourceKey: 'id'});
-// dates.belongsTo(User, {foreignKey: 'users_id', targetKey: 'id'})
 
+User.hasOne(Trainer)
+Trainer.hasMany(dates, {foreignKey: 'trainers_id', sourceKey: 'id'});
+User.hasOne(Trainee)
 
 module.exports = {
     sequelize: sequelize,

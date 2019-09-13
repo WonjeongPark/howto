@@ -2,7 +2,7 @@ import React from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import './Postcode.css';
  
-export const Postcode =({ isOpen, close, onChangePost })=>{
+export const Postcode =({ isOpen, close, onChangePost, localname })=>{
   
  function handleAddress(data){
     let fullAddress = data.address;
@@ -18,12 +18,8 @@ export const Postcode =({ isOpen, close, onChangePost })=>{
       fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
     }
     console.log(fullAddress);
-    return fullAddress;
+    onChangePost(localname, fullAddress)
   }
-  // function inputPost(event){
-  //   this.setState(event.target.value)
-  //   onChangePost={fullAddress}
-  // };
  
     return (
       <React.Fragment>
@@ -34,10 +30,9 @@ export const Postcode =({ isOpen, close, onChangePost })=>{
           <div className="Modal">
           <DaumPostcode
             onComplete={handleAddress}
-            // onChange={event => inputPost(event)}
-          />
+              />
             <div className="button-wrap">
-              <button onClick={close}> Confirm </button>
+              <button onClick={close}> 입력 </button>
             </div>
           </div>
       </React.Fragment>

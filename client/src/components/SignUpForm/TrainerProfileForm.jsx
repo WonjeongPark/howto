@@ -10,12 +10,22 @@ import './TrainerProfileForm.css';
 
 
 class TrainerProfileForm extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-      isModalOpen: false, 
-    }
+  state = {
+    isModalOpen: false,
+    loginID : 'howto1',
+    loginPW : 'howto1',
+    loginPWCK: 'howto1',
+    name: '박원정',
+    email:'bnhs1127@gmail.com',
+    local:'서울시 송파구 중대로 16',
+    gender: '여성',
+    gym: '스포애니문정점',
+    career:'1년~2년',
+    dates: [],
+    bodypart: '목',
+    playerSource: 'http://media.w3.org/2010/05/bunny/trailer.mp4',
+    count: 10,
+    Num: 3
   }
 
   openModal = () => {
@@ -26,27 +36,11 @@ class TrainerProfileForm extends Component {
     this.setState({ isModalOpen: false }); 
   }
  
-  state = {
-    loginID : '',
-    loginPW : '',
-    loginPWCK: '',
-    name: '',
-    email:'',
-    local:'',
-    gender: '',
-    gym: '',
-    career:'',
-    dates: [],
-    bodypart: '',
-    playerSource: '',
-    count: 10,
-    Num: 3
-  }
+
   ProfileChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state)
   }
   counterChange = (countername, counter) => {
     this.setState({
@@ -158,7 +152,7 @@ class TrainerProfileForm extends Component {
           <span className="highlight"></span><span className="bar"></span>
           <label>이름</label>
         </div>
-        <select name="gender" required="required" value={this.state.value} onChange={this.ProfileChange}>
+        <select name="gender" required="required" value={this.state.gender} onChange={this.ProfileChange}>
             <option value="">성별</option>
             <option value="여성">여성</option>
             <option value="남성">남성</option>
@@ -170,8 +164,8 @@ class TrainerProfileForm extends Component {
           <label>Email</label>
         </div>
         <div className="group">
-        <input type="text" onClick={this.openModal} placeholder="주소입력"></input>
-        <Postcode name="local" required="required" value={this.fullAdress} onChangePost={this.ProfileChange}
+        <input type="text" className="local" onClick={this.openModal} placeholder="주소입력" value={this.state.local} readOnly/>
+        <Postcode localname="local" required="required" onChangePost={this.counterChange}
         isOpen={this.state.isModalOpen} close={this.closeModal}/>
         </div>
         <div className="group">
@@ -180,7 +174,7 @@ class TrainerProfileForm extends Component {
           <span className="highlight"></span><span className="bar"></span>
           <label>헬스장이름-지점</label>
         </div>
-        <select name="career" required="required" value={this.state.value} onChange={this.ProfileChange}>
+        <select name="career" required="required" value={this.state.career} onChange={this.ProfileChange}>
             <option value="">지도경력</option>
             <option value="~1년">1년미만</option>
             <option value="1년~2년">1년~2년</option>
@@ -194,15 +188,15 @@ class TrainerProfileForm extends Component {
         <div className="group" ><MultipleDatePicker  onSubmit={this.dateChange} minDate={new Date()} required="required"/></div>
         <Divider/>
         <div className="group">
-          <input type="text" value={this.state.value} onChange={this.ProfileChange}
+          <input type="text" value={this.state.playerSource} onChange={this.ProfileChange}
           ref="playerSource" name="playerSource" id="playerSource"
            required="required"/>
           <span className="highlight"></span><span className="bar"></span>
           <label>동영상URL</label>
         </div>
         <div>http://media.w3.org/2010/05/bunny/trailer.mp4</div>
-        <div className="body" value={this.state.value} onChange={this.ProfileChange} > <div style={fontStyle}>주요운동부위</div>
-        <input type="checkbox" name="bodypart" value="등" />등
+        <div className="body" value={this.state.bodypart} onChange={this.ProfileChange} > <div style={fontStyle}>주요운동부위</div>
+        <input type="checkbox" name="bodypart" value="등"/>등
         <input type="checkbox" name="bodypart" value="복부"/>복부
         <input type="checkbox" name="bodypart" value="목"/>목
         <input type="checkbox" name="bodypart" value="팔"/>팔
@@ -210,11 +204,10 @@ class TrainerProfileForm extends Component {
         <input type="checkbox" name="bodypart" value="허벅지"/>허벅지
         <input type="checkbox" name="bodypart" value="종아리"/>종아리
         </div>
-        <Counter countname="count" countvalue={this.state.value} onChangeCounter={this.counterChange}
-         setname="setNum"  setvalue={this.state.value} required="required"/>
+        <Counter countname="count" countvalue={this.state.count} onChangeCounter={this.counterChange}
+         setname="setNum"  setvalue={this.state.Num} required="required"/>
 
         <Button className="submitBtn" type="submit"
-        // as={Link} to='/TrainerList'
         color='violet' fluid size='large'>등록</Button>
         </Segment>
       </form>
