@@ -12,7 +12,7 @@ class TrainerProfileList extends Component {
     const list = data.map(
       info => (
       <TrainerProfile
-       key={info.id}
+       key={info[0].id}
        info={info}
        onRemove={onRemove}
        />)

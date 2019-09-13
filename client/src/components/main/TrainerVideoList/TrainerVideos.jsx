@@ -13,7 +13,7 @@ class TrainerVideos extends Component {
     const list = data.map(
       info => (
       <TrainerVideo
-       key={info.id}
+       key={info[0].id}
        info={info}
        />)
     );

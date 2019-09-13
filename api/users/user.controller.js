@@ -4,10 +4,12 @@ const models = require('../../models/models');
 
   exports.index = (req, res, next) => {
     models.User.findAll(
-      { 
-        include : [
-          {model: models.dates,
-          attributes : ['dates']}]
+      {
+        include: [{
+        model: models.Trainer,
+        include : [{ model: models.dates,
+          attributes : ['dates'] }]
+      }]
       }
       ).then(
         users => res.send(users))
@@ -91,7 +93,7 @@ const models = require('../../models/models');
       })
       .then((user) => {res.status(302).json(user)
         console.log("데이터 추가 성공");
-        res.redirect("/TrainerList" )
+        // res.redirect("/TrainerList" )
     })
 
   };

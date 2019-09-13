@@ -12,7 +12,7 @@ class ProfileDashboard extends Component {
      this.callBackendAPI()
       .then(res => {
         this.setState( 
-        {users : res}
+        {users : [res]}
       )} )
       .catch(err => console.log(err));
   }

@@ -4,14 +4,16 @@ import './TrainerProfile.css';
 
 class TrainerProfile extends Component {
     static defaultProps = {
-        info: {
+      info: [{
           name: '',
-          gym: '',
           gender:'',
           career:'',
-          dates:[],
-          id: 0
-        } 
+          trainer : {
+            gym: '',
+            career: '',
+            dates:[],
+          },id:0
+        }]
       }
       
       constructor() {
@@ -38,19 +40,16 @@ class TrainerProfile extends Component {
             padding: '8px',
             margin: '8px'
           };
+        const dates = this.props.info[0].trainer.dates;
         
-        const dates = this.props.info.dates;
-        // console.log(dates);
           const datesformat = dates.map(dates => new Date(dates.dates)
           .toLocaleString("ko-KR",
           { weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' })
           )
           // console.log(datesformat)
-
-        const {
-            name, gym, gender, career,  id
-          } = this.props.info;
- 
+        const {name, gender, id} = this.props.info[0];
+        const {gym, career} = this.props.info[0].trainer;
+        
         const rdU = 'https://randomuser.me/api/portraits/women/'
         // console.log(this.state.gender)
         return (
@@ -74,7 +73,7 @@ class TrainerProfile extends Component {
                     }
                     <div>오른쪽에서 운동영상 보기</div>
                     <div>수강생평가 : {id}</div>
-                    <Button><i aria-hidden="true" class="envelope icon"></i>트레이너 연락하기</Button>
+                    <Button><i aria-hidden="true" className="envelope icon"></i>트레이너 연락하기</Button>
                 </Grid.Column>
             </Grid>
         )
