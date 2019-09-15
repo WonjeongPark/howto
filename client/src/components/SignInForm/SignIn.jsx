@@ -26,7 +26,10 @@ const SignIn = () => (
         </Segment>
       </Form>
       <Message>
-        <Link to ="SignUp">New to us? Sign Up</Link>
+        <Link to ="TrainerForm">New to us? Sign Up > 트레이너 </Link>
+      </Message>
+      <Message>
+        <Link to ="TraineeForm">New to us? Sign Up > 수강생</Link>
       </Message>
     </Grid.Column>
   </Grid>

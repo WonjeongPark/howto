@@ -17,7 +17,7 @@ class ProfileDashboard extends Component {
       .catch(err => console.log(err));
   }
   callBackendAPI = async () => {
-    const response = await fetch('/users');
+    const response = await fetch('/users/trainer');
     const body = await response.json();
     console.log(body)
     if (response.status !== 200) {

@@ -1,31 +1,27 @@
-
 import React, { Component } from 'react'
 import { Button, Grid, Header, Image, Divider, Segment } from 'semantic-ui-react'
-// import { Link } from 'react-router-dom'
 import Postcode from './Postcode'
 import howto_logo from '../../howto_logo.png'
-import MultipleDatePicker from 'react-multiple-datepicker'
 import Counter from './Counter'
-import './SignupForm.css';
+import './TrainerForm.css';
 
 
-class SignupForm extends Component {
+class TrainerForm extends Component {
   state = {
     isModalOpen: false,
-    loginID : 'howto1',
-    loginPW : 'howto1',
-    loginPWCK: 'howto1',
-    name: '박원정',
+    loginID : 'howto2',
+    loginPW : 'howto2',
+    loginPWCK: 'howto2',
+    name: '정수',
     email:'bnhs1127@gmail.com',
     local:'서울시 송파구 중대로 16',
-    gender: '여성',
-    gym: '스포애니문정점',
-    career:'1년~2년',
-    dates: [],
-    bodypart: '목',
-    playerSource: 'http://media.w3.org/2010/05/bunny/trailer.mp4',
-    count: 10,
-    Num: 3
+    gender: '남성',
+    prg: '개인',
+    age:'20대',
+    bodytarget: '목',
+    purpose: '체형교정',
+    week: 10,
+    times: 3
   }
 
   openModal = () => {
@@ -80,18 +76,17 @@ class SignupForm extends Component {
           name: this.state.name,
           email:this.state.email,
           local:this.state.local,
-          gym: this.state.gym,
           gender: this.state.gender,
-          career:this.state.career,
-          bodypart: this.state.bodypart,
-          playerSource:this.state.playerSource,
-          count:this.state.count,
-          Num:this.state.Num,
-          dates: this.state.dates
+          prg: this.state.prg,
+          age:this.state.age,
+          bodytarget: this.state.bodytarget,
+          purpose:this.state.purpose,
+          week:this.state.week,
+          times:this.state.times
           } 
       console.log(data)
       
-      fetch("/users", {
+      fetch("/users/trainee", {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
@@ -157,6 +152,15 @@ class SignupForm extends Component {
             <option value="여성">여성</option>
             <option value="남성">남성</option>
         </select>
+        <select name="age" required="required" value={this.state.age} onChange={this.ProfileChange}>
+            <option value="">나이대설정</option>
+            <option value="10대이하">10대이하</option>
+            <option value="20대">20대</option>
+            <option value="30대">30대</option>
+            <option value="40대">40대</option>
+            <option value="50대">50대</option>
+            <option value="60대이상">60대이상</option>
+        </select>
         <div className="group">
           <input type="text" className="email" value={this.state.email} onChange={this.ProfileChange}
            name="email" required="required"/>
@@ -168,44 +172,34 @@ class SignupForm extends Component {
         <Postcode localname="local" required="required" onChangePost={this.counterChange}
         isOpen={this.state.isModalOpen} close={this.closeModal}/>
         </div>
-        <div className="group">
-          <input type="text" value={this.state.gym} onChange={this.ProfileChange}
-           name="gym" required="required"/>
-          <span className="highlight"></span><span className="bar"></span>
-          <label>헬스장이름-지점</label>
-        </div>
-        <select name="career" required="required" value={this.state.career} onChange={this.ProfileChange}>
-            <option value="">지도경력</option>
-            <option value="~1년">1년미만</option>
-            <option value="1년~2년">1년~2년</option>
-            <option value="2년~3년">2년~3년</option>
-            <option value="3년~4년">3년~4년</option>
-            <option value="4년~5년">4년~5년</option>
-            <option value="5년이상">5년~</option>
+        <select name="prg" required="required" value={this.state.prg} onChange={this.ProfileChange}>
+            <option value="">개인/그룹선택</option>
+            <option value="개인">개인</option>
+            <option value="그룹">그룹</option>
+            <option value="병행">병행</option>
+            <option value="상관없음">상관없음</option>
         </select>
         <Divider/>
-        <div style={fontStyle}>PT가능날짜</div>
-        <div className="group" ><MultipleDatePicker  onSubmit={this.dateChange} minDate={new Date()}/></div>
-        <Divider/>
+        <div style={fontStyle}>운동목적</div>
         <div className="group">
-          <input type="text" value={this.state.playerSource} onChange={this.ProfileChange}
-          ref="playerSource" name="playerSource" id="playerSource"
-           required="required"/>
+          <input type="text" value={this.state.purpose} onChange={this.ProfileChange}
+          className="purpose" required="required"/>
           <span className="highlight"></span><span className="bar"></span>
-          <label>동영상URL</label>
+          <label>ex)체형교정,다이어트,굽은어깨 등</label>
         </div>
-        <div>http://media.w3.org/2010/05/bunny/trailer.mp4</div>
-        <div className="body" value={this.state.bodypart} onChange={this.ProfileChange} > <div style={fontStyle}>주요운동부위</div>
-        <input type="checkbox" name="bodypart" value="등"/>등
-        <input type="checkbox" name="bodypart" value="복부"/>복부
-        <input type="checkbox" name="bodypart" value="목"/>목
-        <input type="checkbox" name="bodypart" value="팔"/>팔
-        <input type="checkbox" name="bodypart" value="엉덩이"/>엉덩이
-        <input type="checkbox" name="bodypart" value="허벅지"/>허벅지
-        <input type="checkbox" name="bodypart" value="종아리"/>종아리
+        <div className="body" value={this.state.bodypart} onChange={this.ProfileChange} >
+        <div style={fontStyle}>원하는 집중부위</div>
+        <input type="checkbox" name="bodytarget" value="등"/>등
+        <input type="checkbox" name="bodytarget" value="복부"/>복부
+        <input type="checkbox" name="bodytarget" value="목"/>목
+        <input type="checkbox" name="bodytarget" value="팔"/>팔
+        <input type="checkbox" name="bodytarget" value="엉덩이"/>엉덩이
+        <input type="checkbox" name="bodytarget" value="허벅지"/>허벅지
+        <input type="checkbox" name="bodytarget" value="종아리"/>종아리
         </div>
-        <Counter countname="count" countvalue={this.state.count} onChangeCounter={this.counterChange}
-         setname="setNum"  setvalue={this.state.Num} required="required"/>
+        <div style={fontStyle}>원하는 기간(주/횟수)</div>
+        <Counter countname="week" countvalue={this.state.week} onChangeCounter={this.counterChange}
+         setname="setNum" setvalue={this.state.times} required="required"/>
 
         <Button className="submitBtn" type="submit"
         color='violet' fluid size='large'>등록</Button>
@@ -218,4 +212,4 @@ class SignupForm extends Component {
 }
 
 
-export default SignupForm;
+export default TrainerForm;

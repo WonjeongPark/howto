@@ -32,7 +32,7 @@ const HomepageHeading = ({ mobile }) => (
               fontSize: mobile ? '2em' : '4em',
               fontWeight: 'bold',
               marginBottom: 0,
-              marginTop: mobile ? '0.5em' : '1em',
+              marginTop: mobile ? '0.2em' : '0.5em',
             }}
           />
           <Header
@@ -46,6 +46,10 @@ const HomepageHeading = ({ mobile }) => (
               marginTop: mobile ? '0.5em' : '1.5em',
             }}
           />
+          <Button as={Link} to='/SignIn' color='violet' size='huge' style={{margin: '1em'}} >
+            수강생 찾기
+            <Icon name='right arrow' />
+          </Button>
           <Button as={Link} to='/SignIn' color='violet' size='huge' style={{margin: '1em'}} >
             트레이너 찾기
             <Icon name='right arrow' />
