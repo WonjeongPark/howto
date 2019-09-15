@@ -6,7 +6,7 @@ import ProfileDashboard from '../main/ProfileDashboard/ProfileDashboard'
 import HomePage from '../Home/Homepage.jsx'
 import NavBar from '../nav/Navbar'
 import SignIn from '../SignInForm/SignIn'
-import SignUp from '../SignUpForm/TrainerProfileForm'
+import SignUp from '../SignUpForm/SignupForm'
 
 class App extends Component {
   render() {

@@ -6,10 +6,10 @@ import Postcode from './Postcode'
 import howto_logo from '../../howto_logo.png'
 import MultipleDatePicker from 'react-multiple-datepicker'
 import Counter from './Counter'
-import './TrainerProfileForm.css';
+import './SignupForm.css';
 
 
-class TrainerProfileForm extends Component {
+class SignupForm extends Component {
   state = {
     isModalOpen: false,
     loginID : 'howto1',
@@ -185,7 +185,7 @@ class TrainerProfileForm extends Component {
         </select>
         <Divider/>
         <div style={fontStyle}>PT가능날짜</div>
-        <div className="group" ><MultipleDatePicker  onSubmit={this.dateChange} minDate={new Date()} required="required"/></div>
+        <div className="group" ><MultipleDatePicker  onSubmit={this.dateChange} minDate={new Date()}/></div>
         <Divider/>
         <div className="group">
           <input type="text" value={this.state.playerSource} onChange={this.ProfileChange}
@@ -218,4 +218,4 @@ class TrainerProfileForm extends Component {
 }
 
 
-export default TrainerProfileForm;
+export default SignupForm;
