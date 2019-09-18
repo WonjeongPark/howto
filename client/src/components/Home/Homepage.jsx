@@ -105,7 +105,7 @@ class hompage extends Component {
                   <Button as={Link} to='/SignIn' inverted={!fixed}>
                     Log in
                   </Button>
-                  <Button as={Link} to='/SignUp' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                  <Button as={Link} to='/SignIn' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
                     Sign Up
                   </Button>
                 </Menu.Item>

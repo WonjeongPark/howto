@@ -9,18 +9,15 @@ const SignIn = () => (
       <Header as='h2' color='violet' textAlign='center'>
         <Image src={howto_logo} /> Welcome Back!
       </Header>
-      <Form size='large'>
+
+      <Form size='large' action="/login" method="post" name="frm_login" id="frm_login">
         <Segment stacked>
-          <Form.Input fluid icon='user' iconPosition='left' placeholder='ID' />
-          <Form.Input
-            fluid
-            icon='lock'
-            iconPosition='left'
-            placeholder='Password'
-            type='password'
+          <Form.Input fluid icon='user' iconPosition='left' placeholder='ID' name='loginID'/>
+          <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password'
+            type='password' name='loginPW'
           />
 
-          <Button as={Link} to='/TrainerList' color='violet' fluid size='large'>
+          <Button type="submit"  value="Login" color='violet' fluid size='large'>
             Login
           </Button>
         </Segment>

@@ -73,7 +73,6 @@ const models = require('../../models/models');
       email : email,
       local : local,
       gender : gender,
-      // Trainer -> trainer ( tablename : trainers X)
       trainer : 
       {gym : gym,
       career : career,

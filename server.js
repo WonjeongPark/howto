@@ -1,5 +1,23 @@
 const express = require('express');
 const app = express();
+var bodyParser = require('body-parser');
+app.use( bodyParser.urlencoded({ extended: false }) );
+app.use( bodyParser.json() );
+
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var cookieSession = require('cookie-session');
+var flash = require('connect-flash');
+app.use(cookieSession({
+  keys: ['howto_trainer'],
+  cookie: {
+    maxAge: 1000 * 60 * 60
+  }
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 const port = process.env.PORT || 5000;
 app.use(express.json())
 
