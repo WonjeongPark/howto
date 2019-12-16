@@ -4,7 +4,7 @@ const router = express.Router();
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
 
-router.post('/login', passport.authenticate('howto_db', {failureRedirect: '/login', failureFlash: true}),
+router.post('/login', passport.authenticate('howto_db', {failureRedirect: '/SignIn', failureFlash: true}),
   function (req, res) {
     res.redirect('/TrainerList');
   });
@@ -15,14 +15,16 @@ passport.use(new LocalStrategy({
   passReqToCallback: true
 }, function (req, loginID, loginPW, done) {
     User.findOne({loginID: loginID}, function (err, user){
-        if(err) { return done(err)};
+        if(err) { return done(err), console.error('err')};
         if(!user) { 
-            return done(null, false, {message : 'Incorrect login ID'});
+            return done(null, false, {message : 'Incorrect login ID'}),
+            console.error('err ID')
         }
         if(!user.validPassword(loginPW)){
-            return done(null, false, { message : 'Incorrect Password '})
+            return done(null, false, { message : 'Incorrect Password '}),
+            console.error('err Password')
         }
-        return done(null, user);
+        return done(null, user), console.error('err what');
     })}
 //     console.log(loginID)
 //     if(loginID === 'user001' && loginPW === 'password'){
@@ -44,23 +46,23 @@ passport.deserializeUser(function (user, done) {
   });
 
 
-var isAuthenticated = function (req, res, next) {
-  if (req.isAuthenticated())
-    return next();
-  res.redirect('/login');
-};
-router.get('/myinfo', isAuthenticated, function (req, res) {
-    res.render('myinfo',{
-      title: 'My Info',
-      user_info: req.user
-    })
-  });
+// var isAuthenticated = function (req, res, next) {
+//   if (req.isAuthenticated())
+//     return next();
+//   res.redirect('/login');
+// };
+// router.get('/myinfo', isAuthenticated, function (req, res) {
+//     res.render('myinfo',{
+//       title: 'My Info',
+//       user_info: req.user
+//     })
+//   });
 
 
-router.get('/Signout', function (req, res) {
-  req.logout();
-  res.redirect('/');
-});
+// router.get('/Signout', function (req, res) {
+//   req.logout();
+//   res.redirect('/');
+// });
 
 
 
