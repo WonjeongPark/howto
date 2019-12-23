@@ -1,10 +1,11 @@
 const express = require('express');
+const models = require('../../models/models');
 const router = express.Router();
 
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
 
-router.post('/login', passport.authenticate('howto_db', {failureRedirect: '/SignIn', failureFlash: true}),
+router.post('/login', passport.authenticate('local', {failureRedirect: '/SignIn', failureFlash: true}),
   function (req, res) {
     res.redirect('/TrainerList');
   });
@@ -14,7 +15,7 @@ passport.use(new LocalStrategy({
   passwordField: 'loginPW',
   passReqToCallback: true
 }, function (req, loginID, loginPW, done) {
-    User.findOne({loginID: loginID}, function (err, user){
+    models.User.findOne({loginID: loginID}, function (err, user){
         if(err) { return done(err), console.error('err')};
         if(!user) { 
             return done(null, false, {message : 'Incorrect login ID'}),

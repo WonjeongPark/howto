@@ -41,7 +41,7 @@ const SignIn = () => (
         <Image src={howto_logo} /> Welcome Back!
       </Header>
 
-      <Form size='large' action="/login" method="post" name="frm_login" id="frm_login">
+      <Form size='large' action="/users/login" method="post" name="frm_login" id="frm_login">
         <Segment stacked>
           {/* <Form.Input fluid icon='user' iconPosition='left' placeholder='ID' name='loginID'/>
           <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password'
