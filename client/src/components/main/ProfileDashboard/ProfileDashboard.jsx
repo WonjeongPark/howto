@@ -12,12 +12,12 @@ class ProfileDashboard extends Component {
      this.callBackendAPI()
       .then(res => {
         this.setState( 
-        {users : res}
+        {users : [res]}
       )} )
       .catch(err => console.log(err));
   }
   callBackendAPI = async () => {
-    const response = await fetch('/users');
+    const response = await fetch('/users/trainer');
     const body = await response.json();
     console.log(body)
     if (response.status !== 200) {
@@ -35,9 +35,7 @@ class ProfileDashboard extends Component {
 
   render() {
     const { users } = this.state;
-    
-    // console.log(this.state)
-    // - dates OK
+  
     return (
       <Grid>
             <Grid.Column width={7}>

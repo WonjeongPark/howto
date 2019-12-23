@@ -6,7 +6,8 @@ import ProfileDashboard from '../main/ProfileDashboard/ProfileDashboard'
 import HomePage from '../Home/Homepage.jsx'
 import NavBar from '../nav/Navbar'
 import SignIn from '../SignInForm/SignIn'
-import SignUp from '../SignUpForm/TrainerProfileForm'
+import TrainerForm from '../SignUpForm/TrainerForm'
+import TraineeForm from '../SignUpForm/TraineeForm'
 
 class App extends Component {
   render() {
@@ -24,8 +25,9 @@ class App extends Component {
                 <Container className="main">
                   <Switch>
                     <Route path="/SignIn" component={SignIn} />
-                    <Route path="/SignUp" component={SignUp} />
+                    <Route path="/TrainerForm" component={TrainerForm} />
                     <Route path="/TrainerList" component={ProfileDashboard} />
+                    <Route path="/TraineeForm" component={TraineeForm} />
                   </Switch>
                 </Container>
               </div>

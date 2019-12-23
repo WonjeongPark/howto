@@ -7,15 +7,17 @@ import { Player, ControlBar } from 'video-react';
 
 class TrainerVideo extends Component {
   static defaultProps = {
-    info: {
+    info: [{
       name: '이름',
+      trainer : {
       gym: '헬스장',
       bodypart:'',
       playerSource: '',
       count: '',
-      Num:'',
+      Num:''
+    },
       id: 0
-    } 
+    }]
   }
   render() {
     const style = {
@@ -23,9 +25,10 @@ class TrainerVideo extends Component {
       padding: '4px',
       margin: '12px'
     };
+    const name = this.props.info[0].name;
     const {
-      name, gym, count, Num, bodypart, playerSource
-    } = this.props.info;
+      gym, count, Num, bodypart, playerSource
+    } = this.props.info[0].trainer;
     return (
       <Grid className="trainervideo" style={style}>
                 <Grid.Column className="trainervideo-left" width={10}>
