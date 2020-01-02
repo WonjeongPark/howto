@@ -38,10 +38,11 @@ app.use(cookieSession({
     maxAge: 1000 * 60 * 60 
   }
 }));
-app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use('/users', require('./api/users/index'));
-app.use('/login', require('./api/users/index'));
+// app.use('/login', require('./api/users/index'));
 module.exports = app;

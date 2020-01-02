@@ -1,21 +1,29 @@
 const express = require('express');
 const models = require('../../models/models');
+const user = models.User
 const router = express.Router();
 
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
 
-router.post('/login', passport.authenticate('local', {failureRedirect: '/SignIn', failureFlash: true}),
-  function (req, res) {
-    res.redirect('/TrainerList');
-  });
+router.post('/login', console.log('what')
+// passport.authenticate('local', {failureRedirect: '/SignIn', failureFlash: true}),
+//   function (req, res) {
+    
+//     // res.redirect('/TrainerList');
+//   }
+  );
 
 passport.use(new LocalStrategy({
   usernameField: 'loginID',
   passwordField: 'loginPW',
   passReqToCallback: true
 }, function (req, loginID, loginPW, done) {
-    models.User.findOne({loginID: loginID}, function (err, user){
+  user.findOne({
+      where: {
+        loginID: loginID
+      }
+    }, function (err, user){
         if(err) { return done(err), console.error('err')};
         if(!user) { 
             return done(null, false, {message : 'Incorrect login ID'}),
@@ -37,14 +45,16 @@ passport.use(new LocalStrategy({
 //     }
 //   }
 ));
+passport.use(user.createStrategy());
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
+// passport.serializeUser(function (user, done) {
+//     done(null, user)
+//   });
 
-passport.serializeUser(function (user, done) {
-    done(null, user)
-  });
-
-passport.deserializeUser(function (user, done) {
-    done(null, user);
-  });
+// passport.deserializeUser(function (user, done) {
+//     done(null, user);
+//   });
 
 
 // var isAuthenticated = function (req, res, next) {
@@ -52,18 +62,6 @@ passport.deserializeUser(function (user, done) {
 //     return next();
 //   res.redirect('/login');
 // };
-// router.get('/myinfo', isAuthenticated, function (req, res) {
-//     res.render('myinfo',{
-//       title: 'My Info',
-//       user_info: req.user
-//     })
-//   });
-
-
-// router.get('/Signout', function (req, res) {
-//   req.logout();
-//   res.redirect('/');
-// });
 
 
 
