@@ -41,13 +41,13 @@ const SignIn = () => (
         <Image src={howto_logo} /> Welcome Back!
       </Header>
 
-      <Form size='large' action="/users/login" method="post" name="frm_login" id="frm_login">
+      <Form size='large' action="/users/login" method="post" name="login" id="login">
         <Segment stacked>
           {/* <Form.Input fluid icon='user' iconPosition='left' placeholder='ID' name='loginID'/>
           <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password'
             type='password' name='loginPW' /> */}
             <input type="text" placeholder='ID' name='loginID'/>
-            <input type="text" placeholder='Password' type='password' name='loginPW'/>
+            <input type='password' placeholder='Password'  name='loginPW'/>
           <Button type="submit"  value="Login" color='violet' fluid size='large'>
             Login
           </Button>
