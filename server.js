@@ -27,21 +27,6 @@ models.sequelize.sync()
   });
 
 
-var passport = require('passport')
-var LocalStrategy = require('passport-local').Strategy;
-var cookieSession = require('cookie-session');
-var flash = require('connect-flash');
-
-app.use(cookieSession({
-  keys: ['jay_park'],
-  cookie: {
-    maxAge: 1000 * 60 * 60 
-  }
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
 
 app.use('/users', require('./api/users/index'));
 // app.use('/login', require('./api/users/index'));
