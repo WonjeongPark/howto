@@ -24,7 +24,7 @@
     "sequelize": "^5.18.4"
   },
   "devDependencies": {
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "node-mocks-http": "^1.7.6",
     "should": "^13.2.3",
     "sinon": "^7.4.1"
